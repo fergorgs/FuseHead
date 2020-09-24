@@ -59,12 +59,12 @@
     <UnityVersion>2020.1.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerControlls.cs" />
-    <Compile Include="Assets\FloorDetection.cs" />
-    <Compile Include="Assets\BlastResistence.cs" />
-    <Compile Include="Assets\ExplosionDeath.cs" />
-    <Compile Include="Assets\OrbeScript.cs" />
-    <Compile Include="Assets\TimerScrip.cs" />
+    <Compile Include="Assets\Player\PlayerControlls.cs" />
+    <Compile Include="Assets\Player\FloorDetection.cs" />
+    <Compile Include="Assets\Scripts\BlastResistence.cs" />
+    <Compile Include="Assets\Scripts\ExplosionDeath.cs" />
+    <Compile Include="Assets\Scripts\RespawnControllerScript.cs" />
+    <Compile Include="Assets\Scripts\OrbeScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
