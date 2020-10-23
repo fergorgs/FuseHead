@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1847340973223716055}
   - component: {fileID: 1889561433770870950}
   - component: {fileID: 981602843490067598}
+  - component: {fileID: 8436222724201570903}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847340973223716054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -3.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1847340972365846668}
@@ -177,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76de9a013d181bc43b206dabc7d97eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 8436222724201570903}
   runSpeed: 0.8
   horizontalMove: 0
   playerBlow: {fileID: 1889561433770870950}
-  sprite: {fileID: 1847340973223716138}
   characterController: {fileID: 981602843490067598}
 --- !u!114 &1889561433770870950
 MonoBehaviour:
@@ -197,7 +198,6 @@ MonoBehaviour:
   explosion: {fileID: 2427725527557881283, guid: 896328f7530bbc89eb6fa6b59937597e, type: 3}
   blowUpTime: 50
   respawnTime: 1
-  respawnController: {fileID: 0}
 --- !u!114 &981602843490067598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +220,45 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8436222724201570903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847340973223716054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: fbb358f3ea5185646a141b59544bca8e, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5d0d23c-7162-4d03-9bd5-ccfa14f59c11
+    m_ActionName: InGame/Jump[/Keyboard/w,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cc869cd2-b585-4f27-80cb-bf9309209010
+    m_ActionName: InGame/Movement[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 87f5b72c-a784-494e-b7d7-2e55af537c13
+    m_ActionName: InGame/BlowUp[/Keyboard/f,/Keyboard/e,/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
