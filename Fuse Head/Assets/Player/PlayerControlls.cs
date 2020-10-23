@@ -19,7 +19,6 @@ public class PlayerControlls : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        Debug.Log(playerInput.actions);
         playerInput.actions["Move"].performed += OnMovePerformed;
         playerInput.actions["Jump"].started += OnJump;
         playerInput.actions["BlowUp"].started += OnBlowUp;
@@ -49,12 +48,12 @@ public class PlayerControlls : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(playerInput);
-        
+        playerInput.ActivateInput();
     }
 
     private void OnDisable()
     {
+        playerInput.DeactivateInput();
         playerInput.actions["Move"].performed -= OnMovePerformed;
         playerInput.actions["Jump"].started -= OnJump;
         playerInput.actions["BlowUp"].started -= OnBlowUp;
