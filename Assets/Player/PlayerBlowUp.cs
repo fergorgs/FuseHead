@@ -16,8 +16,7 @@ public class PlayerBlowUp : MonoBehaviour {
 		startTime = Time.time;
     }
 
-	private void Update()
-	{
+	private void Update() {
 		puppetHead.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, t);
 
 		if (t < 1)

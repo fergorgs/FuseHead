@@ -50,7 +50,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -114,7 +113,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: 30
+  m_ForceMagnitude: 50
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -135,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 1
+  explosionDuration: 0.1
 --- !u!95 &-8013109326056711892
 Animator:
   serializedVersion: 3
