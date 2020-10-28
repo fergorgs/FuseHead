@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 306625226}
   - component: {fileID: 306625228}
   - component: {fileID: 306625227}
+  - component: {fileID: 306625229}
   m_Layer: 5
   m_Name: Credits Text
   m_TagString: Untagged
@@ -1035,6 +1036,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306625225}
   m_CullTransparentMesh: 0
+--- !u!114 &306625229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306625225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a661d70847ecf56ea9d1c9026c6354a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Names:
+  - Name: Alexandre
+    LastNames: Galocha Pinto Junior
+  - Name: Daniel
+    LastNames: Sa Barretto Prado Garcia
+  - Name: Eduardo
+    LastNames: Pirro RGB
+  - Name: Fernando
+    LastNames: Gorgulho Fayet
+  - Name: Tiago
+    LastNames: Marino Silva
+  textUI: {fileID: 306625227}
 --- !u!1 &405283339
 GameObject:
   m_ObjectHideFlags: 0
