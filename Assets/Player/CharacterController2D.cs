@@ -1,6 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class CharacterController2D : MonoBehaviour {
     [SerializeField] private float m_JumpForce = 400f; // Amount of force added when the player jumps.
     [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
@@ -15,6 +16,11 @@ public class CharacterController2D : MonoBehaviour {
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+    ///<summary>
+    /// Ghost jump time delay in ms
+    ///</summary>
+    [SerializeField] private float ghostJumpDelay = 130f;
+
     [Header("Events")]
     [Space]
 
@@ -22,7 +28,6 @@ public class CharacterController2D : MonoBehaviour {
 
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> {}
-
 
     private void Awake() {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -32,6 +37,11 @@ public class CharacterController2D : MonoBehaviour {
 
     }
 
+    private IEnumerator GhostJumpDelay() {
+        yield return new WaitForSeconds((float)0.001 * ghostJumpDelay);
+        m_Grounded = true;
+
+    }
     private void FixedUpdate() {
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
@@ -41,7 +51,7 @@ public class CharacterController2D : MonoBehaviour {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++) {
             if (colliders[i].gameObject != gameObject) {
-                m_Grounded = true;
+                StartCoroutine(GhostJumpDelay());
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
@@ -49,7 +59,6 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     public void Move(float move, bool jump) {
-    
 
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl) {
