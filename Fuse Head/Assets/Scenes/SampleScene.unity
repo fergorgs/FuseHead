@@ -266,6 +266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 5
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &237027331
 Rigidbody2D:
   serializedVersion: 4
@@ -376,7 +379,7 @@ Transform:
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &299300313
 GameObject:
@@ -412,6 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 10
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &299300315
 Rigidbody2D:
   serializedVersion: 4
@@ -641,6 +647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 5
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &812918032
 Rigidbody2D:
   serializedVersion: 4
@@ -751,7 +760,7 @@ Transform:
   m_LocalScale: {x: 4, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1267327986 stripped
 MonoBehaviour:
@@ -778,7 +787,7 @@ GameObject:
   - component: {fileID: 1587002906}
   - component: {fileID: 1587002905}
   m_Layer: 0
-  m_Name: Brick
+  m_Name: Iron Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,6 +807,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 10
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &1587002906
 Rigidbody2D:
   serializedVersion: 4
@@ -836,14 +848,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.44182172, y: 2.7254543}
     newSize: {x: 0.87890625, y: 0.87890625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.87890625, y: 0.87890625}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1587002908
 SpriteRenderer:
@@ -885,7 +897,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2b8ef0bbef498c48b56d53d40b62627, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d8d5f5fa4d7f25448d55aee1d923cfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -903,13 +915,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587002904}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5, y: -2.75, z: 0}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757751653
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +956,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 5
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &1757751655
 Rigidbody2D:
   serializedVersion: 4
@@ -1138,6 +1153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastResistence: 5
   curLife: 0
+  fullLifeSprite: {fileID: 0}
+  middleLifeSprite: {fileID: 0}
+  lowLifeSprite: {fileID: 0}
 --- !u!50 &2082657746
 Rigidbody2D:
   serializedVersion: 4
@@ -1348,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903877524094382180, guid: f8610a8b475657e40bada43f76ffb108, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2903877524094382180, guid: f8610a8b475657e40bada43f76ffb108, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1409,7 +1427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227414819058414254, guid: 7eb0be559ac7d2f4db202a115254b4a3, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8227414819058414254, guid: 7eb0be559ac7d2f4db202a115254b4a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1426,6 +1444,10 @@ PrefabInstance:
     - target: {fileID: 8227414819058414258, guid: 7eb0be559ac7d2f4db202a115254b4a3, type: 3}
       propertyPath: m_Name
       value: Orbe
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227414819058414258, guid: 7eb0be559ac7d2f4db202a115254b4a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb0be559ac7d2f4db202a115254b4a3, type: 3}

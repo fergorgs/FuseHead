@@ -7,6 +7,8 @@ public class BlastResistence : MonoBehaviour
 	public float blastResistence = 10;
 	public float curLife;
 
+	public Sprite fullLifeSprite, middleLifeSprite, lowLifeSprite;
+
 	private float r;
 	private float g;
 	private float b;
@@ -26,7 +28,15 @@ public class BlastResistence : MonoBehaviour
     {
 		if (curLife <= 0)
 			Destroy(gameObject);
-    }
+
+		if (curLife > (blastResistence * 0.66f))
+			GetComponent<SpriteRenderer>().sprite = fullLifeSprite;
+		else if (curLife > (blastResistence * 0.33f))
+			GetComponent<SpriteRenderer>().sprite = middleLifeSprite;
+		else
+			GetComponent<SpriteRenderer>().sprite = lowLifeSprite;
+
+	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
