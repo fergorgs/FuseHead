@@ -27,8 +27,9 @@ public class PlayerBlowUp : MonoBehaviour {
         Instantiate(explosion, transform.position, transform.rotation);
 
         OnBlowUp?.Invoke();
-
-        Destroy(gameObject);
+        
+        // Destroy player on next frame
+        Destroy(gameObject, .01f);
     }
 
     private IEnumerator BlowUpTimer() {

@@ -6,14 +6,12 @@ using UnityEngine.InputSystem;
 public class RespawnControllerScript : MonoBehaviour {
 	public Vector3[] respawnPoints;
 	public GameObject playerPrefab;
-	public PlayerInputManager playerInputManager;
+	
+	private PlayerInputManager _playerInputManager;
 
 	void Start() {
-        playerInputManager = GetComponent<PlayerInputManager>();
-        playerInputManager.playerPrefab = playerPrefab;
-        SpawnPlayer();
-        //RespawnPlayer(0.1f);
-		//RespawnPlayer(0);
+        _playerInputManager = GetComponent<PlayerInputManager>();
+        _playerInputManager.playerPrefab = playerPrefab;
 	}
 
     
@@ -28,11 +26,11 @@ public class RespawnControllerScript : MonoBehaviour {
 		Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
 
         //var player = Instantiate(playerPrefab, respPos, Quaternion.identity);
-        var player = playerInputManager.JoinPlayer();
+        var player = _playerInputManager.JoinPlayer();
         player.transform.position = respPos;
-
-        player.GetComponent<PlayerBlowUp>().OnBlowUp += () => {
-            RespawnPlayer(secondsToRespawn);
+		var PlayerBlowUp = player.GetComponent<PlayerBlowUp>();
+        PlayerBlowUp.OnBlowUp += () => {
+            RespawnPlayer(PlayerBlowUp.respawnTime);
         };
 		
 	}
