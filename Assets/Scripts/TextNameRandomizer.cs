@@ -4,17 +4,17 @@ using UnityEngine;
 using TMPro;
 public class TextNameRandomizer : MonoBehaviour
 {
-    public PersonName[] Names;
+    public PersonName[] Names = null;
 
-    [SerializeField] private TMP_Text textUI;
+    [SerializeField] private TMP_Text TextUI = null;
     
     private void OnEnable()
     {
         RandomizeNames();
-        textUI.text = string.Empty;
+        TextUI.text = string.Empty;
         foreach (PersonName personName in Names)
         {
-            textUI.text += personName.Name + ' ' + personName.LastNames + '\n'; 
+            TextUI.text += personName.Name + ' ' + personName.LastNames + '\n'; 
         }
     }
 
