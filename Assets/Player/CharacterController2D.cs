@@ -9,6 +9,7 @@ public class CharacterController2D : MonoBehaviour {
     [SerializeField] private LayerMask m_WhatIsGround = 0; // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck = null; // A position marking where to check if the player is grounded.
     private bool m_GhostJump = false;
+    [SerializeField] private float m_JumpBufferTime = .2f, m_StartJumpBuffer = 0f;
     [SerializeField] private float m_GhostJumpForceMultiplier = 1.1f;
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private bool m_Grounded; // Whether or not the player is grounded.
@@ -16,7 +17,6 @@ public class CharacterController2D : MonoBehaviour {
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
-    private float fallJumpMultiplier = 2.5f, lowJumpMultiplier = 2f;
     ///<summary>
     /// Ghost jump time delay in ms
     ///</summary>
@@ -85,15 +85,19 @@ public class CharacterController2D : MonoBehaviour {
                 Flip();
             }
         }
+        if (jump && !m_Grounded)m_StartJumpBuffer = Time.time;
+
         // If the player should jump...
-        if (m_Grounded && jump) {
-            // Add a vertical force to the player.
-            m_Grounded = false;
-            if (m_GhostJump) {
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * m_GhostJumpForceMultiplier));
-                m_GhostJump = false;
-            } else
+        if (m_Grounded) {
+            var delay = Time.time - m_StartJumpBuffer;
+            if (jump || delay < m_JumpBufferTime) {
+                var vel = m_Rigidbody2D.velocity;
+                vel.y = 0f;
+                m_Rigidbody2D.velocity = vel;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                m_Grounded = false;
+                m_StartJumpBuffer = 0f;
+            }
         }
 
     }
