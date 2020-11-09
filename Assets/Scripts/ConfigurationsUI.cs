@@ -5,19 +5,21 @@ using UnityEngine.UI;
 public class ConfigurationsUI : MonoBehaviour
 {
     [System.Serializable]
-    private struct SoundSprites
+    private struct SoundObjects
     {
         public Image SfxImage;
+        public Slider SfxSlider;
         public Sprite SfxOn;
         public Sprite SfxOff;
         public Image MusicImage;
+        public Slider MusicSlider;
         public Sprite MusicOn;
         public Sprite MusicOff;
     }
 
     [SerializeField] private ConfigSO configs = null;
     [SerializeField] private AudioMixer audioMixer = null;
-    [SerializeField] private SoundSprites soundSprites;
+    [SerializeField] private SoundObjects soundObjs;
 
     // Start is called before the first frame update
     private void Awake()
@@ -28,34 +30,41 @@ public class ConfigurationsUI : MonoBehaviour
     public void SwitchSfx()
     {
         configs.SfxOn = !configs.SfxOn;
-        soundSprites.SfxImage.sprite = configs.SfxOn ? soundSprites.SfxOn : soundSprites.SfxOff;
+        soundObjs.SfxImage.sprite = configs.SfxOn ? soundObjs.SfxOn : soundObjs.SfxOff;
     }
 
     public void SwitchMusic()
     {
         configs.MusicOn = !configs.MusicOn;
-        soundSprites.MusicImage.sprite = configs.MusicOn ? soundSprites.MusicOn : soundSprites.MusicOff;
+        soundObjs.MusicImage.sprite = configs.MusicOn ? soundObjs.MusicOn : soundObjs.MusicOff;
     }
 
     public void SetSfxVolume(float volume)
     {
-        audioMixer.SetFloat("sfxVolume", volume);
-        configs.SfxVolume = volume;
+        float decibalVolume = UtilsClass.LinearToDecibel(volume);
+        audioMixer.SetFloat("sfxVolume", decibalVolume);
+        configs.SfxVolume = decibalVolume;
     }
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", volume);
-        configs.MusicVolume = volume;
+        float decibalVolume = UtilsClass.LinearToDecibel(volume);
+        audioMixer.SetFloat("musicVolume", decibalVolume);
+        configs.MusicVolume = decibalVolume;
     }
 
-
-
-    private void LoadConfig()
+    public void LoadConfig()
     {
         configs.LoadFromFile();
-        soundSprites.SfxImage.sprite = configs.SfxOn ? soundSprites.SfxOn : soundSprites.SfxOff;
-        soundSprites.MusicImage.sprite = configs.MusicOn ? soundSprites.MusicOn : soundSprites.MusicOff;
+
+        audioMixer.SetFloat("sfxVolume", configs.SfxVolume);
+        audioMixer.SetFloat("musicVolume", configs.MusicVolume);
+        soundObjs.SfxSlider.value = UtilsClass.DecibelToLinear(configs.SfxVolume);
+        soundObjs.MusicSlider.value = UtilsClass.DecibelToLinear(configs.MusicVolume);
+
+
+        soundObjs.SfxImage.sprite = configs.SfxOn ? soundObjs.SfxOn : soundObjs.SfxOff;
+        soundObjs.MusicImage.sprite = configs.MusicOn ? soundObjs.MusicOn : soundObjs.MusicOff;
     }
 
     private void OnDisable()
