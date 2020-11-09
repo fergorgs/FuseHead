@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22677553}
   m_AnchorMax: {x: 1, y: 0.7755511}
-  m_AnchoredPosition: {x: 0, y: -0.49978638}
+  m_AnchoredPosition: {x: 0, y: -0.49975586}
   m_SizeDelta: {x: 0, y: 3.0578003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &80454361
@@ -491,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22677553}
   m_AnchorMax: {x: 1, y: 0.7755511}
-  m_AnchoredPosition: {x: 0, y: -0.49978638}
+  m_AnchoredPosition: {x: 0, y: -0.49975586}
   m_SizeDelta: {x: 0, y: 3.0578003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &266900687
@@ -1989,7 +1989,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1282837689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1452432072}
+        m_MethodName: SwitchMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1282837689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2073,6 +2084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452432071}
+  - component: {fileID: 1452432072}
   m_Layer: 5
   m_Name: Tela de Configuracoes
   m_TagString: Untagged
@@ -2102,6 +2114,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1452432072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452432070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f33f7552fa7884cbfda418b4980ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
+  soundSprites:
+    SfxImage: {fileID: 1534209678}
+    SfxOn: {fileID: 21300000, guid: 1f146482e13454138889e7b21267f3dc, type: 3}
+    SfxOff: {fileID: 21300000, guid: c66941a5047f24dadb66035a5ed07773, type: 3}
+    MusicImage: {fileID: 1282837689}
+    MusicOn: {fileID: 21300000, guid: 0499308dc31514bf1be3189c00dd0814, type: 3}
+    MusicOff: {fileID: 21300000, guid: f13dc8a456a284e7b8a7489bb427798d, type: 3}
 --- !u!1001 &1509432730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2307,7 +2339,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534209678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1452432072}
+        m_MethodName: SwitchSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534209678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,7 +2599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22677553}
   m_AnchorMax: {x: 1, y: 0.7755511}
-  m_AnchoredPosition: {x: 0, y: -0.49978638}
+  m_AnchoredPosition: {x: 0, y: -0.49975586}
   m_SizeDelta: {x: 0, y: 3.0578003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1825982659
