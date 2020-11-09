@@ -10,10 +10,10 @@ public class ConfigSO : ScriptableObject
     [Header("Sound Options")]
     public bool SfxOn = true;
     public bool MusicOn = true;
-    [Range(0f, 1f)]
-    public float SfxAmount = 1f; 
-    [Range(0f, 1f)]
-    public float MusicAmount = 1f;
+    [Range(-80f, 0f)]
+    public float SfxVolume = 0f; 
+    [Range(-80f, 0f)]
+    public float MusicVolume = 0f;
 
     [Header("Game Options")]
     public bool FriendlyFire = false;

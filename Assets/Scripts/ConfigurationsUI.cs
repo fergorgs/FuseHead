@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class ConfigurationsUI : MonoBehaviour
@@ -14,12 +15,9 @@ public class ConfigurationsUI : MonoBehaviour
         public Sprite MusicOff;
     }
 
-    [SerializeField]
-    private ConfigSO configs = null;
-
-    [SerializeField]
-    private SoundSprites soundSprites;
-
+    [SerializeField] private ConfigSO configs = null;
+    [SerializeField] private AudioMixer audioMixer = null;
+    [SerializeField] private SoundSprites soundSprites;
 
     // Start is called before the first frame update
     private void Awake()
@@ -38,6 +36,20 @@ public class ConfigurationsUI : MonoBehaviour
         configs.MusicOn = !configs.MusicOn;
         soundSprites.MusicImage.sprite = configs.MusicOn ? soundSprites.MusicOn : soundSprites.MusicOff;
     }
+
+    public void SetSfxVolume(float volume)
+    {
+        audioMixer.SetFloat("sfxVolume", volume);
+        configs.SfxVolume = volume;
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("musicVolume", volume);
+        configs.MusicVolume = volume;
+    }
+
+
 
     private void LoadConfig()
     {
