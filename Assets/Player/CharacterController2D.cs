@@ -8,14 +8,15 @@ public class CharacterController2D : MonoBehaviour {
     [SerializeField] private bool m_AirControl = false; // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround = 0; // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck = null; // A position marking where to check if the player is grounded.
-
+    private bool m_GhostJump = false;
+    [SerializeField] private float m_GhostJumpForceMultiplier = 1.1f;
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded; // Whether or not the player is grounded.
+    [SerializeField] private bool m_Grounded; // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true; // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
-
+    private float fallJumpMultiplier = 2.5f, lowJumpMultiplier = 2f;
     ///<summary>
     /// Ghost jump time delay in ms
     ///</summary>
@@ -37,9 +38,8 @@ public class CharacterController2D : MonoBehaviour {
 
     }
 
-    private IEnumerator GhostJumpDelay() {
-        yield return new WaitForSeconds((float)0.001 * ghostJumpDelay);
-        m_Grounded = true;
+    private void GhostJumpDelay() {
+        m_Grounded = false;
 
     }
     private void FixedUpdate() {
@@ -51,10 +51,16 @@ public class CharacterController2D : MonoBehaviour {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++) {
             if (colliders[i].gameObject != gameObject) {
-                StartCoroutine(GhostJumpDelay());
+                m_Grounded = true;
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
+        }
+        if (wasGrounded && !m_Grounded && m_Rigidbody2D.velocity.y < 0f) {
+            m_Grounded = true;
+            m_GhostJump = true;
+            Invoke(nameof(GhostJumpDelay), 0.001f * ghostJumpDelay);
+
         }
     }
 
@@ -83,8 +89,13 @@ public class CharacterController2D : MonoBehaviour {
         if (m_Grounded && jump) {
             // Add a vertical force to the player.
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            if (m_GhostJump) {
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * m_GhostJumpForceMultiplier));
+                m_GhostJump = false;
+            } else
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
+
     }
 
     private void Flip() {
