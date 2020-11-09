@@ -22,14 +22,17 @@ public class TextNameRandomizer : MonoBehaviour
     {
         for (int i = 0; i < Names.Length; i++)
         {
-            string[] lastNames = Names[i].LastNames.Split();
-            string[] cpy = (string[])lastNames.Clone();
-            for(int j = 0; j < lastNames.Length; j++)
+            List<string> lastNames = new List<string>(Names[i].LastNames.Split());
+            List<string> cpy = new List<string>(lastNames.Count);
+
+            for(int j = lastNames.Count-1; j >= 0; j--)
             {
-                lastNames[j] = cpy[(j+1)%lastNames.Length];
-                Debug.Log(cpy[j] + '|' + lastNames[j]);
+                int index = Random.Range(0, lastNames.Count);
+                cpy.Add(lastNames[index]);
+                lastNames.RemoveAt(index);
             }
-            Names[i].LastNames = RebuildLastNames(lastNames);
+
+            Names[i].LastNames = RebuildLastNames(cpy.ToArray());
         }
     }
 
@@ -40,7 +43,6 @@ public class TextNameRandomizer : MonoBehaviour
         {
             result += ' ' + lastNames[i];
         }
-        Debug.Log(result);
         return result;
     }
 }
