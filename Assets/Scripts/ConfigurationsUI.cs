@@ -24,6 +24,12 @@ public class ConfigurationsUI : MonoBehaviour
     private void Start()
     {
         LoadConfig();
+
+        soundObjs.SfxSlider.onValueChanged.AddListener(SetSfxVolume);
+        soundObjs.SfxImage.GetComponent<Button>().onClick.AddListener(SwitchSfx);
+
+        soundObjs.MusicSlider.onValueChanged.AddListener(SetMusicVolume);
+        soundObjs.MusicImage.GetComponent<Button>().onClick.AddListener(SwitchMusic);
     }
 
     public void SwitchSfx()
