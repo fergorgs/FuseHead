@@ -12,7 +12,6 @@ public class PlayerControlls : MonoBehaviour
 
 
 	private bool jump = false;
-	private float iniTime;
 
 	public CharacterController2D characterController;
 
