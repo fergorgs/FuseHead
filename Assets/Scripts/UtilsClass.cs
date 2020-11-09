@@ -15,7 +15,7 @@ public class UtilsClass
         if (linear != 0)
             dB = 20.0f * Mathf.Log10(linear);
         else
-            dB = -144.0f;
+            dB = -80.0f;
 
         return dB;
     }

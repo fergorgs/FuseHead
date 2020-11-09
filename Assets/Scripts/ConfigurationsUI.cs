@@ -18,56 +18,50 @@ public class ConfigurationsUI : MonoBehaviour
     }
 
     [SerializeField] private ConfigSO configs = null;
-    [SerializeField] private AudioMixer audioMixer = null;
-    [SerializeField] private SoundObjects soundObjs;
+    [SerializeField] private SoundObjects soundObjs = new SoundObjects(){};
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         LoadConfig();
     }
 
     public void SwitchSfx()
     {
-        configs.SfxOn = !configs.SfxOn;
+        configs.SetSfx(!configs.SfxOn);
         soundObjs.SfxImage.sprite = configs.SfxOn ? soundObjs.SfxOn : soundObjs.SfxOff;
     }
 
     public void SwitchMusic()
     {
-        configs.MusicOn = !configs.MusicOn;
+        configs.SetMusic(!configs.MusicOn);
         soundObjs.MusicImage.sprite = configs.MusicOn ? soundObjs.MusicOn : soundObjs.MusicOff;
     }
 
     public void SetSfxVolume(float volume)
     {
-        float decibalVolume = UtilsClass.LinearToDecibel(volume);
-        audioMixer.SetFloat("sfxVolume", decibalVolume);
-        configs.SfxVolume = decibalVolume;
+        configs.SetSfxVolume(volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        float decibalVolume = UtilsClass.LinearToDecibel(volume);
-        audioMixer.SetFloat("musicVolume", decibalVolume);
-        configs.MusicVolume = decibalVolume;
+        configs.SetMusicVolume(volume);
     }
 
     public void LoadConfig()
     {
         configs.LoadFromFile();
-
-        audioMixer.SetFloat("sfxVolume", configs.SfxVolume);
-        audioMixer.SetFloat("musicVolume", configs.MusicVolume);
         soundObjs.SfxSlider.value = UtilsClass.DecibelToLinear(configs.SfxVolume);
         soundObjs.MusicSlider.value = UtilsClass.DecibelToLinear(configs.MusicVolume);
+        SetSfxVolume(soundObjs.SfxSlider.value);
+        SetMusicVolume(soundObjs.MusicSlider.value);
 
 
         soundObjs.SfxImage.sprite = configs.SfxOn ? soundObjs.SfxOn : soundObjs.SfxOff;
         soundObjs.MusicImage.sprite = configs.MusicOn ? soundObjs.MusicOn : soundObjs.MusicOff;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         configs.SaveToFile();
     }
