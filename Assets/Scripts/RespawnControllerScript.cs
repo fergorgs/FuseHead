@@ -6,15 +6,20 @@ using UnityEngine.InputSystem;
 public class RespawnControllerScript : MonoBehaviour {
 	public Vector3[] respawnPoints;
 	public GameObject playerPrefab;
-	
+
 	private PlayerInputManager _playerInputManager;
 
 	void Start() {
-        _playerInputManager = GetComponent<PlayerInputManager>();
-        _playerInputManager.playerPrefab = playerPrefab;
+		_playerInputManager = GetComponent<PlayerInputManager>();
+		_playerInputManager.playerPrefab = playerPrefab;
 	}
 
-    
+	void OnDrawGizmos() {
+		foreach(var point in respawnPoints){
+			Gizmos.color = Color.cyan;
+			Gizmos.DrawSphere(point, .3f);
+		}
+	}
 	public void RespawnPlayer(float secondsToRespawn) {
 		StartCoroutine(RespawnPlayerTimer(secondsToRespawn));
 	}
@@ -25,16 +30,16 @@ public class RespawnControllerScript : MonoBehaviour {
 
 		Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
 
-        //var player = Instantiate(playerPrefab, respPos, Quaternion.identity);
-        var player = _playerInputManager.JoinPlayer();
-        player.transform.position = respPos;
+		//var player = Instantiate(playerPrefab, respPos, Quaternion.identity);
+		var player = _playerInputManager.JoinPlayer();
+		player.transform.position = respPos;
 		var PlayerBlowUp = player.GetComponent<PlayerBlowUp>();
-        PlayerBlowUp.OnBlowUp += () => {
-            RespawnPlayer(PlayerBlowUp.respawnTime);
-        };
-		
+		PlayerBlowUp.OnBlowUp += () => {
+			RespawnPlayer(PlayerBlowUp.respawnTime);
+		};
+
 	}
 
-    [ContextMenu("SpawnPlayer")]
-    public void SpawnPlayer() => RespawnPlayer(0f);
+	[ContextMenu("SpawnPlayer")]
+	public void SpawnPlayer() => RespawnPlayer(0f);
 }
