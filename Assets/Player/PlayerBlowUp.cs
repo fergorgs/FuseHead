@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class PlayerBlowUp : MonoBehaviour {
 
+    public event Action OnBlowUp;
+
     public GameObject explosion, puppetHead;
     public float blowUpTime, respawnTime;
-    public Action OnBlowUp;
     private SpriteRenderer sprite;
     private float startTime, t = 0;
 
