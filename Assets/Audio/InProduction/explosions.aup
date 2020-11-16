@@ -1,0 +1,66 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="explosions_data" version="1.3.0" audacityversion="2.3.0" sel0="1.8644018874" sel1="1.8644018874" vpos="0" h="0.0000000000" zoom="210.2550971690" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="2020"/>
+		<tag name="Software" value="Lavf58.12.100"/>
+		<tag name="ALBUM" value="FoG"/>
+		<tag name="ARTIST" value="Tiago Marino Silva"/>
+		<tag name="GENRE" value="SFX"/>
+		<tag name="TITLE" value="Pinhata"/>
+	</tags>
+	<wavetrack name="Faixa de Áudio" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="106970">
+				<waveblock start="0">
+					<simpleblockfile filename="e080838c.au" len="106970" min="-0.990442" max="1.01399" rms="0.123133"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="2.42562490" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="708821">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808999.au" len="179347" min="-0.64983" max="0.65" rms="0.094523"/>
+				</waveblock>
+				<waveblock start="179347">
+					<simpleblockfile filename="e08088da.au" len="262144" min="-0.031331" max="0.0297" rms="0.001839"/>
+				</waveblock>
+				<waveblock start="441491">
+					<simpleblockfile filename="e080868b.au" len="133665" min="-0.031548" max="0.042991" rms="0.002502"/>
+				</waveblock>
+				<waveblock start="575156">
+					<simpleblockfile filename="e0808c3f.au" len="133665" min="-0.040602" max="0.023543" rms="0.001704"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Faixa de Áudio" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="106970">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808195.au" len="106970" min="-0.987453" max="1.011357" rms="0.122849"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="2.42562490" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="708821">
+				<waveblock start="0">
+					<simpleblockfile filename="e08083a4.au" len="179347" min="-0.649824" max="0.65" rms="0.094437"/>
+				</waveblock>
+				<waveblock start="179347">
+					<simpleblockfile filename="e0808b48.au" len="262144" min="-0.03114" max="0.02788" rms="0.001762"/>
+				</waveblock>
+				<waveblock start="441491">
+					<simpleblockfile filename="e0808bd3.au" len="133665" min="-0.031505" max="0.042284" rms="0.002438"/>
+				</waveblock>
+				<waveblock start="575156">
+					<simpleblockfile filename="e0808196.au" len="133665" min="-0.039819" max="0.023773" rms="0.001691"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

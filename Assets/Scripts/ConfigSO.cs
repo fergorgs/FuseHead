@@ -27,10 +27,15 @@ public class ConfigSO : ScriptableObject
 
     private void OnEnable()
     {
-        path = Application.persistentDataPath + "/config.json";
+        path = Path.Combine(Application.persistentDataPath, "config.json");
 
         Application.quitting += SaveToFile;
 
+        if (audioMixer == null)
+        {
+            const string audioMixerPath = "MainAudioMixer";
+            audioMixer = Resources.Load<AudioMixer>(audioMixerPath);
+        }
     }
 
     public void LoadFromFile()
@@ -46,6 +51,11 @@ public class ConfigSO : ScriptableObject
             var json = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(json, this);
 
+            if (audioMixer == null)
+            {
+                const string audioMixerPath = "MainAudioMixer";
+                audioMixer = Resources.Load<AudioMixer>(audioMixerPath);
+            }
             audioMixer.SetFloat("sfxVolume", SfxVolume);
             audioMixer.SetFloat("musicVolume", MusicVolume);
         }

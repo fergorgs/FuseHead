@@ -9,8 +9,6 @@ public class MusicAudioSource : MonoBehaviour
 
     private void Awake()
     {
-        config.OnMusicSwitch += Config_OnMusicSwitch;
-        
         _audioSource = GetComponent<AudioSource>();
     }
     
@@ -21,6 +19,12 @@ public class MusicAudioSource : MonoBehaviour
 
     private void OnEnable()
     {
+        config.OnMusicSwitch += Config_OnMusicSwitch;
         _audioSource.mute = !config.MusicOn;
+    }
+
+    private void OnDisable()
+    {
+        config.OnMusicSwitch -= Config_OnMusicSwitch;
     }
 }
