@@ -23,7 +23,6 @@ public class PlayerControlls : MonoBehaviour
         playerInput.actions["BlowUp"].started += OnBlowUp;
     }
 
-
     private void OnBlowUp(InputAction.CallbackContext obj)
     {
         playerBlow.BlowUp();

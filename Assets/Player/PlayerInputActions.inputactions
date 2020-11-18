@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "33604e30-7f18-4754-b30b-43ac235897a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -165,28 +173,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ecba806b-3a57-4eb9-92e7-68d932c012f5",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "BlowUp",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "967c6002-d7dd-49d4-b5c3-9e696dc3b0aa",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "BlowUp",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ea5f4e80-7217-438c-84ce-94c0dd764fe1",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -204,6 +190,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "BlowUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc7d3a07-fa7d-44aa-9e1f-71c4883e13ae",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

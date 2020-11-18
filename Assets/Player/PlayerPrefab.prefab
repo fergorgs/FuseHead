@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 6951992428306666375}
   - component: {fileID: 4277103779535844484}
   - component: {fileID: 5705468814554729874}
+  - component: {fileID: -2057979038569853504}
   m_Layer: 2
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -319,6 +320,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
+--- !u!114 &-2057979038569853504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847340973223716054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6732fa8dbcd4fc342b262da7b2a4bd2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlapCircleRadius: 2
+  _playerInput: {fileID: 0}
 --- !u!1001 &4290543969414384830
 PrefabInstance:
   m_ObjectHideFlags: 0
