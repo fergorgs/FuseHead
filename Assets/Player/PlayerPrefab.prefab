@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 8436222724201570903}
   - component: {fileID: 6951992428306666375}
   - component: {fileID: 4277103779535844484}
-  - component: {fileID: 5705468814554729874}
   - component: {fileID: -2057979038569853504}
   m_Layer: 2
   m_Name: PlayerPrefab
@@ -216,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5284ca513bf970752aa2bc8f280a60ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 8
+  m_JumpForce: 6
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -307,19 +306,6 @@ MonoBehaviour:
   _animator: {fileID: 0}
   _rigidbody: {fileID: 0}
   _controller: {fileID: 0}
---- !u!114 &5705468814554729874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847340973223716054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12444711b0004a49a281f6afe3fbd7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
 --- !u!114 &-2057979038569853504
 MonoBehaviour:
   m_ObjectHideFlags: 0

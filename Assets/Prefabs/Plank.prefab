@@ -49,7 +49,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -144,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83488cba8934024a8bf557dc7ec59b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastResistence: 10
+  blastResistence: 2
   curLife: 0
   fullLifeSprite: {fileID: 21300000, guid: badfe0b6f8e812441808b2db8a7cbf58, type: 3}
   middleLifeSprite: {fileID: 21300000, guid: 41f3447e34e715642a19d21014e39cb0, type: 3}

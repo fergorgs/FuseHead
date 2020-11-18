@@ -42,7 +42,7 @@ public class BlastResistence : MonoBehaviour
 	{
 		//Debug.Log("Name: " + collision.gameObject.name);
 		if (collision.gameObject.tag == "Explosion")
-			Degrade(2);
+			Degrade(1);
 	}
 
 	public void Degrade(int points)

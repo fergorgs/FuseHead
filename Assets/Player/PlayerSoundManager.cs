@@ -60,6 +60,7 @@ public class PlayerSoundManager : MonoBehaviour
 
     private void PlayerExplosion_OnBlowUp()
     {
+        Debug.Log("Exploooosion");
         _audioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
     }
 
