@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SfxOn: 1
   MusicOn: 1
-  SfxVolume: -3.8554397
-  MusicVolume: -8.150511
+  SfxVolume: -3.4486527
+  MusicVolume: -5.2644734
   audioMixer: {fileID: 24100000, guid: 8d89f054513e505448b0085380839dd7, type: 2}
   FriendlyFire: 0
