@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
         type: 3}
       propertyPath: _flags.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
         type: 3}

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewSampleScene.unity
     guid: 930954119f8d53147ae781e85e13f076
+  - enabled: 1
+    path: Assets/Scenes/Teletransporte test.unity
+    guid: dda2e7b8d59b0b905b7acbd9a960769c
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/Level_1.unity
+    guid: 755cd9c1d306175499890cd9915a3893
   m_configObjects: {}
