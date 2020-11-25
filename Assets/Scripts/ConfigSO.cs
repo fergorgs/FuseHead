@@ -48,9 +48,10 @@ public class ConfigSO : ScriptableObject
         }
         else
         {
+            var audioMixerRef = audioMixer;
             var json = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(json, this);
-
+            audioMixer = audioMixerRef;
             if (audioMixer == null)
             {
                 const string audioMixerPath = "MainAudioMixer";
