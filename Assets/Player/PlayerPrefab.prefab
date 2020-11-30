@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6951992428306666375}
   - component: {fileID: 4277103779535844484}
   - component: {fileID: -2057979038569853504}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
