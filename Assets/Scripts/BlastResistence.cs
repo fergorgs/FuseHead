@@ -1,46 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BlastResistence : MonoBehaviour
 {
-	public float blastResistence = 10;
-	public float curLife;
+    [SerializeField] DestructableItem destructableItem = null;
+    private float curLife;
 
-	public Sprite fullLifeSprite, middleLifeSprite, lowLifeSprite;
-
-	private float r;
-	private float g;
-	private float b;
+    private SpriteRenderer _spriteRenderer = null;
 
 	// Start is called before the first frame update
 	void Start()
     {
-		curLife = blastResistence;
+		curLife = destructableItem.blastResistence;
 
-		r = GetComponent<SpriteRenderer>().color.r;
-		g = GetComponent<SpriteRenderer>().color.g;
-		b = GetComponent<SpriteRenderer>().color.b;
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _spriteRenderer.sprite = destructableItem.fullLifeSprite;
 	}
 
-    // Update is called once per frame
-    void Update()
+    private void VerifyDestructionAmount()
     {
-		if (curLife <= 0)
-			Destroy(gameObject);
+        if (curLife <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-		if (curLife > (blastResistence * 0.66f))
-			GetComponent<SpriteRenderer>().sprite = fullLifeSprite;
-		else if (curLife > (blastResistence * 0.33f))
-			GetComponent<SpriteRenderer>().sprite = middleLifeSprite;
-		else
-			GetComponent<SpriteRenderer>().sprite = lowLifeSprite;
+        if (curLife > (destructableItem.blastResistence * 0.66f))
+            _spriteRenderer.sprite = destructableItem.fullLifeSprite;
+        else if (curLife > (destructableItem.blastResistence * 0.33f))
+            _spriteRenderer.sprite = destructableItem.middleLifeSprite;
+        else
+            _spriteRenderer.sprite = destructableItem.lowLifeSprite;
+    }
 
-	}
-
-	void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
 	{
-		//Debug.Log("Name: " + collision.gameObject.name);
 		if (collision.gameObject.tag == "Explosion")
 			Degrade(1);
 	}
@@ -48,7 +41,6 @@ public class BlastResistence : MonoBehaviour
 	public void Degrade(int points)
 	{
 		curLife -= points;
-		float degRat = curLife / blastResistence;
-		GetComponent<SpriteRenderer>().color = new Color(r* degRat, g* degRat, b* degRat, 1);
-	}
+        VerifyDestructionAmount();
+    }
 }

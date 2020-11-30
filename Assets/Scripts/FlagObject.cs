@@ -5,12 +5,12 @@ public class FlagObject : MonoBehaviour
 {
     public Action OnFlagCaptured = null;
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (!collision.gameObject.CompareTag("Player"))
             return;
 
         OnFlagCaptured?.Invoke();
-		Destroy(gameObject);
-	}
+        Destroy(gameObject);
+    }
 }

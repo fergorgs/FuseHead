@@ -31,11 +31,11 @@ public class RespawnControllerScript : MonoBehaviour {
 		Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
 
 		//var player = Instantiate(playerPrefab, respPos, Quaternion.identity);
-		var player = _playerInputManager.JoinPlayer();
+		PlayerInput player = _playerInputManager.JoinPlayer();
 		player.transform.position = respPos;
-		var PlayerBlowUp = player.GetComponent<PlayerBlowUp>();
-		PlayerBlowUp.OnBlowUp += () => {
-			RespawnPlayer(PlayerBlowUp.respawnTime);
+        PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
+		playerBlowUp.OnBlowUp += () => {
+			RespawnPlayer(playerBlowUp.respawnTime);
 		};
 
 	}
