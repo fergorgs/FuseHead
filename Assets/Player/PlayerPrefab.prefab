@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6951992428306666375}
   - component: {fileID: 4277103779535844484}
   - component: {fileID: -2057979038569853504}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   explosion: {fileID: 2427725527557881283, guid: 896328f7530bbc89eb6fa6b59937597e,
     type: 3}
   puppetHead: {fileID: 5416836947074265791}
-  blowUpTime: 1000
+  blowUpTime: 5
   respawnTime: 1
 --- !u!114 &981602843490067598
 MonoBehaviour:
