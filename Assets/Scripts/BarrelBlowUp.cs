@@ -15,9 +15,6 @@ public class BarrelBlowUp : MonoBehaviour {
 
     public void BlowUp() {
         Instantiate(explosion, transform.position, transform.rotation);
-
-
-
         Destroy(gameObject);
     }
 }
