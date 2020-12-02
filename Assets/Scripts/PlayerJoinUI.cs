@@ -114,6 +114,4 @@ public class PlayerJoinUI : MonoBehaviour
             child.gameObject.SetActive(true);
         }
     }
-
-
 }
