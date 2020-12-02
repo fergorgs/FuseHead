@@ -240,6 +240,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5302621721319636293}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &149230248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3452720822325736413, guid: 256751ff580e14b4e97f9f824d14885d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2025969216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &173005953
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +798,7 @@ MonoBehaviour:
   nextScreen: {fileID: 946047125}
   nextScreenSelectedObject: {fileID: 975464195}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &306625225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1169,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8073404666569573637, guid: 20ca6cafd487614e5bcf8ca83000fdeb,
     type: 3}
   m_PrefabInstance: {fileID: 8073404666148617963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &522183593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6886361896114229720, guid: 256751ff580e14b4e97f9f824d14885d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867979565}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &543091394
 PrefabInstance:
@@ -2096,6 +2109,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847123806}
   m_CullTransparentMesh: 0
+--- !u!1 &899497627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3452720822325736413, guid: 256751ff580e14b4e97f9f824d14885d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1867979565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931134779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,6 +2437,7 @@ MonoBehaviour:
   nextScreen: {fileID: 946047125}
   nextScreenSelectedObject: {fileID: 1825982659}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &946047125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,6 +2611,7 @@ MonoBehaviour:
   nextScreen: {fileID: 80454361}
   nextScreenSelectedObject: {fileID: 266900687}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &1044497787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2698,9 @@ GameObject:
   - component: {fileID: 1045501619}
   - component: {fileID: 1045501618}
   - component: {fileID: 1045501617}
+  - component: {fileID: 1045501622}
+  - component: {fileID: 1045501621}
+  - component: {fileID: 1045501620}
   m_Layer: 5
   m_Name: Play Btn
   m_TagString: Untagged
@@ -2726,7 +2750,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7075472, g: 0.6841848, b: 0.6841848, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2783,6 +2807,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045501615}
   m_CullTransparentMesh: 0
+--- !u!114 &1045501620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045501615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0cf80bc87cce844b9b343aa929fe7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeToSinglePlayer: {fileID: 1045501622}
+  ChangeToMultiPlayer: {fileID: 1045501621}
+--- !u!114 &1045501621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045501615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57570a4512650074f8df4f4050d58d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScreen: {fileID: 622259381}
+  nextScreen: {fileID: 2025969217}
+  nextScreenSelectedObject: {fileID: 149230248}
+  eventSystem: {fileID: 1717599194}
+  AutoAddListener: 0
+--- !u!114 &1045501622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045501615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57570a4512650074f8df4f4050d58d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScreen: {fileID: 622259381}
+  nextScreen: {fileID: 522183593}
+  nextScreenSelectedObject: {fileID: 899497627}
+  eventSystem: {fileID: 1717599194}
+  AutoAddListener: 0
 --- !u!1001 &1053846235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3557,6 +3629,7 @@ MonoBehaviour:
   nextScreen: {fileID: 946047125}
   nextScreenSelectedObject: {fileID: 2048677315}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &1546492673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4606,7 @@ MonoBehaviour:
   nextScreen: {fileID: 1593418615}
   nextScreenSelectedObject: {fileID: 937002254}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &1828114800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4591,6 +4665,41 @@ PrefabInstance:
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 543091395}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: currentScreen
+      value: 
+      objectReference: {fileID: 522183593}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: nextScreen
+      value: 
+      objectReference: {fileID: 622259381}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: nextScreenSelectedObject
+      value: 
+      objectReference: {fileID: 1045501615}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1717599194}
+    - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_text
+      value: Single Player Level Selection
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4629,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -4767,11 +4876,41 @@ PrefabInstance:
       propertyPath: levelTextureArray.Array.data[1].Name
       value: MP_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: currentScreen
+      value: 
+      objectReference: {fileID: 2025969217}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: nextScreen
+      value: 
+      objectReference: {fileID: 622259381}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: nextScreenSelectedObject
+      value: 
+      objectReference: {fileID: 1045501615}
+    - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1717599194}
+    - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_text
+      value: Multiplayer Level Selection
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2025969217}
+      objectReference: {fileID: 622259381}
     - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4786,6 +4925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -4825,7 +4969,7 @@ PrefabInstance:
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -5050,6 +5194,7 @@ MonoBehaviour:
   nextScreen: {fileID: 1452432070}
   nextScreenSelectedObject: {fileID: 1542872891}
   eventSystem: {fileID: 1717599194}
+  AutoAddListener: 1
 --- !u!1 &2090829254
 GameObject:
   m_ObjectHideFlags: 0

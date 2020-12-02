@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class PlayerJoinUI : MonoBehaviour
 {
@@ -13,15 +14,12 @@ public class PlayerJoinUI : MonoBehaviour
     [SerializeField] private EventSystem eventSystem = default;
 
     private int _joinedIndex = -1;
+
     Dictionary<InputDevice, int> _joinedPlayersSlot = new Dictionary<InputDevice, int>(4);
 
     private void Awake()
     {
-        joinAction.canceled += OnJoin;
-        leaveAction.canceled += OnLeave;
-
-        joinAction.Enable();
-        leaveAction.Enable();
+        SetJoinedIndex(-1);
     }
 
     private void OnLeave(InputAction.CallbackContext inputCtx)
@@ -59,7 +57,7 @@ public class PlayerJoinUI : MonoBehaviour
         _joinedPlayersSlot.Clear();
         _joinedPlayersSlot = dictionaryCopy;
 
-        _joinedIndex--;
+        SetJoinedIndex(_joinedIndex - 1);
     }
 
     private void OnJoin(InputAction.CallbackContext inputCtx)
@@ -79,7 +77,8 @@ public class PlayerJoinUI : MonoBehaviour
         // Search Available Slot
         if (_joinedIndex >= 3)
             return;
-        _joinedIndex++;
+
+        SetJoinedIndex(_joinedIndex + 1);
 
         // Assign player to slot
         _joinedPlayersSlot[inputCtx.control.device] = _joinedIndex;
@@ -95,6 +94,12 @@ public class PlayerJoinUI : MonoBehaviour
             }
             i++;
         }
+    }
+
+    private void SetJoinedIndex(int index)
+    {
+        _joinedIndex = index;
+        PlayerPrefs.SetInt("NumPlayers", _joinedIndex + 1);
     }
 
     // TODO:
@@ -116,5 +121,23 @@ public class PlayerJoinUI : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
+    }
+
+    private void OnEnable()
+    {
+        joinAction.canceled += OnJoin;
+        leaveAction.canceled += OnLeave;
+
+        joinAction.Enable();
+        leaveAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        joinAction.canceled -= OnJoin;
+        leaveAction.canceled -= OnLeave;
+
+        joinAction.Disable();
+        leaveAction.Disable();
     }
 }
