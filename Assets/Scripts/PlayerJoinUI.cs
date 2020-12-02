@@ -97,6 +97,9 @@ public class PlayerJoinUI : MonoBehaviour
         }
     }
 
+    // TODO:
+    // Separate Active Player Display (make new component)
+    // Visualize Device Layout for joined players
     private void SetImageToDeselected(Transform obj)
     {
         obj.GetComponent<Image>().color = new Color(1, 1, 1, 0.5f);
