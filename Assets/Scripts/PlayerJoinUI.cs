@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerJoinUI : MonoBehaviour
 {
     [SerializeField] private InputAction joinAction = default;
     [SerializeField] private InputAction leaveAction = default;
     [SerializeField] private InputActionAsset playerActionAsset = default;
+    [SerializeField] private Button joinBtn = default;
+    [SerializeField] private EventSystem eventSystem = default;
 
     private int _joinedIndex = -1;
     Dictionary<InputDevice, int> _joinedPlayersSlot = new Dictionary<InputDevice, int>(4);
@@ -25,7 +26,6 @@ public class PlayerJoinUI : MonoBehaviour
 
     private void OnLeave(InputAction.CallbackContext inputCtx)
     {
-        Debug.Log("Trying to leave");
         // Check if it is joined
         if (!_joinedPlayersSlot.ContainsKey(inputCtx.control.device))
             return;
@@ -48,18 +48,26 @@ public class PlayerJoinUI : MonoBehaviour
         }
 
         // Shift player slot in dictionary
-        foreach(var pair in _joinedPlayersSlot)
+        var dictionaryCopy = new Dictionary<InputDevice, int>(4);
+        foreach (var pair in _joinedPlayersSlot)
         {
-            if (_joinedPlayersSlot[pair.Key] > leftIndex)
-                _joinedPlayersSlot[pair.Key] = pair.Value - 1;
+            if (pair.Value > leftIndex)
+                dictionaryCopy[pair.Key] = pair.Value - 1;
+            else
+                dictionaryCopy[pair.Key] = pair.Value;
         }
+        _joinedPlayersSlot.Clear();
+        _joinedPlayersSlot = dictionaryCopy;
 
         _joinedIndex--;
     }
 
     private void OnJoin(InputAction.CallbackContext inputCtx)
     {
-        Debug.Log("Trying to join");
+        // Check if Join Button is selected
+        if (!eventSystem.currentSelectedGameObject.name.Equals(joinBtn.name))
+            return;
+
         // Check Device Compability
         if (!playerActionAsset.actionMaps[0].IsUsableWithDevice(inputCtx.control.device))
             return;
@@ -103,7 +111,6 @@ public class PlayerJoinUI : MonoBehaviour
         obj.GetComponent<Image>().color = Color.white;
         foreach (Transform child in obj)
         {
-            child.GetComponent<Image>().color = Color.white;
             child.gameObject.SetActive(true);
         }
     }
