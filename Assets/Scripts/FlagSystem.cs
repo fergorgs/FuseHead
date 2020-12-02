@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System;
 using UnityEngine.Events;
+using UnityEditor;
 
 public class FlagSystem : MonoBehaviour
 {
@@ -16,6 +16,9 @@ public class FlagSystem : MonoBehaviour
     public void GetFlagsInScene()
     {
         _flags = FindObjectsOfType<FlagObject>();
+#if UNITY_EDITOR
+        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+#endif
     }
 
     public void Setup()
