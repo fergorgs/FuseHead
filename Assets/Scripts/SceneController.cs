@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,47 +20,51 @@ public class SceneController : MonoBehaviour
 
     public void LoadNextScene()
     {
-        int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(buildIndex, LoadSceneMode.Single);
-    }
-
-    public void LoadSceneWithTransition(int buildIndex)
-    {
-        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Additive).completed += (ctx) => SceneManager.UnloadSceneAsync(lastSceneIndex);
-        SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+        LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ReloadActiveScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadSceneWithTransition(int buildIndex)
+    {
+        // Load Transition Scene Single mode (unloads all active scenes)
+        // Load new scene Async on completed
+        // Unload transition scene on completed
+        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        var transitionSceneOperation = SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Single);
+
+        transitionSceneOperation.completed += (obj) => 
+        {
+            SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+        };
+    }
+
+    public void LoadSceneWithTransition(string sceneName)
+    {
+        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        var transitionSceneOperation = SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Single);
+
+        transitionSceneOperation.completed += (obj) =>
+        {
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+        };
+    }
+
+    public void LoadNextSceneWithTransition()
+    {
+        LoadSceneWithTransition(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ReloadActiveSceneWithTransition()
     {
-        int buildIndex = SceneManager.GetActiveScene().buildIndex;
-        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Additive).completed += (ctx) => SceneManager.UnloadSceneAsync(lastSceneIndex);
-        SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+        LoadSceneWithTransition(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void UnloadTransitionScene(AsyncOperation obj)
     {
         SceneManager.UnloadSceneAsync(TransitionSceneIndex);
     }
-
-    public void LoadSceneWithTransition(string sceneName)
-    {
-        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Additive).completed += (ctx) => SceneManager.UnloadSceneAsync(lastSceneIndex);
-        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive).completed += UnloadTransitionScene;
-    }
-
-    public void LoadNextSceneWithTransition()
-    {
-        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Additive).completed += (ctx) => SceneManager.UnloadSceneAsync(lastSceneIndex);
-        SceneManager.LoadSceneAsync(lastSceneIndex + 1, LoadSceneMode.Additive).completed += UnloadTransitionScene;
-    }
-
 }
