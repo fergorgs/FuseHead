@@ -31,6 +31,19 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
     }
 
+    public void ReloadActiveScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
+
+    public void ReloadActiveSceneWithTransition()
+    {
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
+        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadSceneAsync(TransitionSceneIndex, LoadSceneMode.Additive).completed += (ctx) => SceneManager.UnloadSceneAsync(lastSceneIndex);
+        SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+    }
+
     private void UnloadTransitionScene(AsyncOperation obj)
     {
         SceneManager.UnloadSceneAsync(TransitionSceneIndex);

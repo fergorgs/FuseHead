@@ -1213,10 +1213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTextureArray:
-  - Texture: {fileID: 2800000, guid: 45fb468723be5f04b8a682370569e31f, type: 3}
+  - Texture: {fileID: 2800000, guid: e7fb66e9b9320564c9942dd8d0f6bce2, type: 3}
     Name: Level_1
-  - Texture: {fileID: 2800000, guid: 7936a2e614c30dd429958edcbefff521, type: 3}
-    Name: Teletransporte test
+  - Texture: {fileID: 2800000, guid: 6af0b6097e99f0d4697e1f458a888e80, type: 3}
+    Name: Level_2
   sceneController: {fileID: 543091395}
 --- !u!1001 &349038868
 PrefabInstance:
