@@ -34,7 +34,6 @@ public class TurretRotationScript : MonoBehaviour
 		target = null;
 
         foreach(Collider2D collider2D in overlappedColliders) {
-			Debug.Log(collider2D.name);
             if(collider2D.CompareTag("Player")) {
                 target = collider2D.transform;
             	break;
