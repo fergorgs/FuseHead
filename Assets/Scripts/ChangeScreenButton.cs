@@ -9,19 +9,19 @@ public class ChangeScreenButton : MonoBehaviour
     [SerializeField] private GameObject nextScreen = default;
     [SerializeField] private GameObject nextScreenSelectedObject = default;
     [SerializeField] private EventSystem eventSystem = default;
-
-    private Button _button = null;
+    [SerializeField] private bool AutoAddListener = true;
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(ChangeScreen);
+        if(AutoAddListener)
+            GetComponent<Button>().onClick.AddListener(ChangeScreen);
     }
 
-    private void ChangeScreen()
+    public void ChangeScreen()
     {
         currentScreen.SetActive(false);
         nextScreen.SetActive(true);
         eventSystem.SetSelectedGameObject(nextScreenSelectedObject);
     }
+    
 }
