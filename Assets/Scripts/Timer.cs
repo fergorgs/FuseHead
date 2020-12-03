@@ -9,7 +9,6 @@ public class Timer : MonoBehaviour
 
     public bool BeginTimerAtStart = true;
     public UnityEvent OnCountdownEnd = null;
-    public BooleanEventSO PauseEvent = default;
 
     [SerializeField] private float countdownTime = 0;
     [SerializeField] private float timeScale = 1;
@@ -18,15 +17,16 @@ public class Timer : MonoBehaviour
     {
         if (BeginTimerAtStart)
             StartTimer();
-        PauseEvent?.Subscribe(OnPauseEvent);
     }
 
-    private void OnPauseEvent(bool paused)
+    public void OnPauseEvent()
     {
-        if (paused)
-            StopTimer();
-        else
-            ContinueTimer();
+        StopTimer();
+    }
+
+    public void OnUnpauseEvent()
+    {
+        ContinueTimer();
     }
 
     private void Update()
@@ -76,9 +76,8 @@ public class Timer : MonoBehaviour
         Time.timeScale = timeScale;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        PauseEvent?.Unsubscribe(OnPauseEvent);
         Time.timeScale = 1f;
     }
 }

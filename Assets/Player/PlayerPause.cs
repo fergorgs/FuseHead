@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using RoboRyanTron.Unite2017.Events;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerPause : MonoBehaviour
 {
-    [SerializeField] private BooleanEventSO PauseEvent = default;
+    [SerializeField] private GameEvent PauseEvent = default;
 
     private PlayerInput _playerInput = default;
     private bool _paused = false;
@@ -12,34 +13,30 @@ public class PlayerPause : MonoBehaviour
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
-        _playerInput.actions["Pause"].started += PlayerPause_started;
-
-        _paused = PauseEvent.lastCall;
-        PauseEvent?.Subscribe(OnPauseEvent);
-        Paused();
     }
 
-    private void OnPauseEvent(bool paused)
+    public void OnPauseEvent()
     {
-        _paused = paused;
-        Paused();
+        _playerInput.actions.Disable();
     }
 
-    private void Paused()
+    public void OnUnpauseEvent()
     {
-        if (_paused)
-            _playerInput.actions.Disable();
-        else
-            _playerInput.actions.Enable();
+        _playerInput.actions.Enable();
     }
 
     private void PlayerPause_started(InputAction.CallbackContext obj)
     {
-        PauseEvent.Invoke(!_paused);
+        PauseEvent?.Raise();
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        PauseEvent?.Unsubscribe(OnPauseEvent);
+        _playerInput.actions["Pause"].started += PlayerPause_started;
+    }
+
+    private void OnDisable()
+    {
+        _playerInput.actions["Pause"].started -= PlayerPause_started;
     }
 }

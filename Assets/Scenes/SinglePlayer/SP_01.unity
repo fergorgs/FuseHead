@@ -271,11 +271,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
         type: 3}
-      propertyPath: _flags.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
-        type: 3}
       propertyPath: OnGameVictory.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -352,11 +347,6 @@ PrefabInstance:
     - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
         type: 3}
       propertyPath: OnGameVictory.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 597167359456721705, guid: d5c47977fd1e92644842ab64bb8a41fa,
-        type: 3}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597167359456721706, guid: d5c47977fd1e92644842ab64bb8a41fa,
@@ -1860,7 +1850,7 @@ PrefabInstance:
     - target: {fileID: 8801847181203011877, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8801847181203011897, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
         type: 3}
@@ -2112,38 +2102,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
         type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 456523320}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
-      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
-        type: 3}
       propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
         type: 3}
@@ -2154,11 +2114,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 635464518}
+      objectReference: {fileID: 11400000, guid: 2f896ada72782234689c341caf490b6e,
+        type: 2}
     - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
         type: 3}
       propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: Raise
       objectReference: {fileID: 0}
     - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
         type: 3}
@@ -2177,8 +2138,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
         type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f896ada72782234689c341caf490b6e,
+        type: 2}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: OnCountdownEnd.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
       propertyPath: countdownTime
-      value: 45
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74eaf465607af1a4f8c25d4c29453879, type: 3}

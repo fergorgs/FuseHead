@@ -1,25 +1,20 @@
-﻿using System;
+﻿using RoboRyanTron.Unite2017.Events;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PauseMenuUI : MonoBehaviour
 {
-    public BooleanEventSO PauseEvent = default;
+    [SerializeField] private GameEvent UnpauseEvent = default;
     [SerializeField] private GameObject pauseMenuContainer = default;
     [SerializeField] private GameObject firstSelectedObject = default;
     [SerializeField] private EventSystem eventSystem = default;
 
-    private void Awake()
-    {
-        PauseEvent?.Subscribe(OnPauseEvent);
-    }
-
     public void CloseMenu()
     {
-        PauseEvent.Invoke(false);
+        UnpauseEvent.Raise();
     }
 
-    private void OnPauseEvent(bool paused)
+    public void OnPauseEvent(bool paused)
     {
         if (paused)
         {
