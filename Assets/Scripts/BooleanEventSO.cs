@@ -9,6 +9,11 @@ public class BooleanEventSO : ScriptableObject
     public BooleanUnityEvent Event = new BooleanUnityEvent();
     public bool lastCall = default;
 
+    private void OnEnable()
+    {
+        lastCall = false;
+    }
+
     public void Subscribe(UnityAction<bool> call)
     {
         Event.AddListener(call);
@@ -23,5 +28,6 @@ public class BooleanEventSO : ScriptableObject
     {
         Event.Invoke(value);
         lastCall = value;
+        Debug.Log(name + value);
     }
 }
