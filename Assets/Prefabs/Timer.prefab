@@ -47,5 +47,6 @@ MonoBehaviour:
   OnCountdownEnd:
     m_PersistentCalls:
       m_Calls: []
-  _countdownTime: 60
+  PauseEvent: {fileID: 11400000, guid: fc969b8c01e726447bc42d1cb68f7769, type: 2}
+  countdownTime: 0
   timeScale: 1

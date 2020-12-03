@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 6951992428306666375}
   - component: {fileID: 4277103779535844484}
   - component: {fileID: -2057979038569853504}
+  - component: {fileID: 2594929352625241345}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -320,6 +321,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overlapCircleRadius: 2
   _playerInput: {fileID: 0}
+--- !u!114 &2594929352625241345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847340973223716054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c41a2258f07d0a439226236a148182a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseEvent: {fileID: 11400000, guid: fc969b8c01e726447bc42d1cb68f7769, type: 2}
 --- !u!1001 &4290543969414384830
 PrefabInstance:
   m_ObjectHideFlags: 0

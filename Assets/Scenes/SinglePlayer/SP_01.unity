@@ -1897,6 +1897,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3586561675275292463, guid: 412c413a1d9ab944c9d9b7cf3d398e78,
+        type: 3}
+      propertyPath: orthographic size
+      value: 7.59375
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412c413a1d9ab944c9d9b7cf3d398e78, type: 3}
 --- !u!1001 &8478431835407007677
@@ -2030,6 +2035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _countdownTime
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478431835359531983, guid: 74eaf465607af1a4f8c25d4c29453879,
+        type: 3}
+      propertyPath: countdownTime
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74eaf465607af1a4f8c25d4c29453879, type: 3}

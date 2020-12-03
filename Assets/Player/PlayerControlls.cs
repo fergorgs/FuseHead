@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,7 @@ public class PlayerControlls : MonoBehaviour
     public PlayerInput playerInput;
     public float runSpeed = 40f, horizontalMove;
 	public PlayerBlowUp playerBlow;
-
+    public BooleanEventSO PauseEvent = default;
 
 	private bool jump = false;
 
@@ -21,6 +22,14 @@ public class PlayerControlls : MonoBehaviour
         playerInput.actions["Move"].performed += OnMovePerformed;
         playerInput.actions["Jump"].started += OnJump;
         playerInput.actions["BlowUp"].started += OnBlowUp;
+        
+        PauseEvent?.Subscribe(OnPauseEvent);
+    }
+
+    private void OnPauseEvent(bool state)
+    {
+        if (state)
+            horizontalMove = 0f;
     }
 
     private void OnBlowUp(InputAction.CallbackContext obj)
@@ -40,7 +49,7 @@ public class PlayerControlls : MonoBehaviour
 
     void FixedUpdate()
     {
-		characterController.Move(horizontalMove, jump);
+	    characterController.Move(horizontalMove, jump);
 		jump = false;
 	}
 
@@ -55,5 +64,7 @@ public class PlayerControlls : MonoBehaviour
         playerInput.actions["Move"].performed -= OnMovePerformed;
         playerInput.actions["Jump"].started -= OnJump;
         playerInput.actions["BlowUp"].started -= OnBlowUp;
+
+        PauseEvent?.Unsubscribe(OnPauseEvent);
     }
 }

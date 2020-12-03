@@ -1,22 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    public float CountdownTime { get => _countdownTime; private set => _countdownTime = value; }
+    public float CountdownTime { get => countdownTime; private set => countdownTime = value; }
     public float TimeElapsed { get; private set; } = 0;
-    public bool IsPaused { get; private set; } = true;
 
     public bool BeginTimerAtStart = true;
     public UnityEvent OnCountdownEnd = null;
+    public BooleanEventSO PauseEvent = default;
 
-    [SerializeField] private float _countdownTime = 0;
+    [SerializeField] private float countdownTime = 0;
     [SerializeField] private float timeScale = 1;
 
     private void Start()
     {
         if (BeginTimerAtStart)
             StartTimer();
+        PauseEvent?.Subscribe(OnPauseEvent);
+    }
+
+    private void OnPauseEvent(bool paused)
+    {
+        if (paused)
+            StopTimer();
+        else
+            ContinueTimer();
     }
 
     private void Update()
@@ -28,7 +38,7 @@ public class Timer : MonoBehaviour
 
     private void VerifyTime()
     {
-        if(TimeElapsed >= _countdownTime)
+        if(TimeElapsed >= countdownTime)
         {
             OnCountdownEnd?.Invoke();
             StopTimer();
@@ -40,26 +50,35 @@ public class Timer : MonoBehaviour
         TimeElapsed = 0;
         if (timeScale == 0f)
             ContinueTimer();
-        IsPaused = false;
     }
 
     public void StartTimer(float countdownTime)
     {
-        _countdownTime = countdownTime;
+        this.countdownTime = countdownTime;
         StartTimer();
     }
 
     public void ContinueTimer()
     {
-        timeScale = 1;
-        IsPaused = false;
+        timeScale = 1f;
+        Time.timeScale = timeScale;
     }
 
     public void StopTimer()
     {
         timeScale = 0f;
-        IsPaused = true;
+        Time.timeScale = timeScale;
     }
 
-    public void UpdateTimeScale(float scale) => timeScale = scale;
+    public void UpdateTimeScale(float scale)
+    {
+        timeScale = scale;
+        Time.timeScale = timeScale;
+    }
+
+    private void OnDestroy()
+    {
+        PauseEvent?.Unsubscribe(OnPauseEvent);
+        Time.timeScale = 1f;
+    }
 }
