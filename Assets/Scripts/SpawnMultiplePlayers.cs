@@ -1,16 +1,24 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SpawnMultiplePlayers : MonoBehaviour
 {
+    [SerializeField] private PlayerInputManager playerInputManager = default;
     private RespawnControllerScript _respawner = null;
     private GameObject playerPrefab = null;
 
+    private Dictionary<int, InputDevice> playerIndexToDevice;
+
     public void Start()
     {
+        SceneManager.SetActiveScene(gameObject.scene);
         _respawner = GetComponent<RespawnControllerScript>();
+        playerInputManager = GetComponent<PlayerInputManager>();
         playerPrefab = _respawner.playerPrefab;
-        SpawnAllConnectedPlayers();
+        SpawnJoinedPlayers();
+        //SpawnAllConnectedPlayers();
     }
 
     public void SpawnAllConnectedPlayers()
@@ -20,9 +28,40 @@ public class SpawnMultiplePlayers : MonoBehaviour
         {
             if(playerActionMap.IsUsableWithDevice(device))
             {
-                Debug.Log("Connecting player on " + device.displayName);
                 _respawner.SpawnPlayer();
             }
         }
+    }
+
+    public void SpawnJoinedPlayers()
+    {
+        int numPlayers = PlayerPrefs.GetInt("NumPlayers", 0);
+
+        if (numPlayers <= 0)
+        {
+            Debug.LogError("No Player Amount on Prefs");
+            return;
+        }
+
+        playerIndexToDevice = new Dictionary<int, InputDevice>(numPlayers);
+
+        for (int i = 0; i < numPlayers; i++)
+        {
+            int id = PlayerPrefs.GetInt($"player_{i}", -1);
+            if(id != -1)
+            {
+                InputDevice device = InputSystem.GetDeviceById(id);
+                PlayerInput player = playerInputManager.JoinPlayer(playerIndex: i, pairWithDevice: device);
+
+                playerIndexToDevice[player.playerIndex] = device;
+                _respawner.SetupPlayer(player);
+            }
+        }
+    }
+
+    public PlayerInput SpawnPlayerByIndex(int index)
+    {
+        InputDevice device = playerIndexToDevice[index];
+        return playerInputManager.JoinPlayer(playerIndex: index, pairWithDevice: device);
     }
 }

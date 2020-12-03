@@ -38,7 +38,7 @@ public class SceneController : MonoBehaviour
 
         transitionSceneOperation.completed += (obj) => 
         {
-            SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;
+            SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive).completed += UnloadTransitionScene;   
         };
     }
 

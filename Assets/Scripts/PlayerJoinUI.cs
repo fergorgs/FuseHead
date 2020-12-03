@@ -139,5 +139,8 @@ public class PlayerJoinUI : MonoBehaviour
 
         joinAction.Disable();
         leaveAction.Disable();
+
+        foreach (var device in _joinedPlayersSlot.Keys)
+            PlayerPrefs.SetInt($"player_{_joinedPlayersSlot[device]}", device.deviceId);
     }
 }

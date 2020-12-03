@@ -8,10 +8,12 @@ public class RespawnControllerScript : MonoBehaviour {
 	public GameObject playerPrefab;
 
 	private PlayerInputManager _playerInputManager;
+	private SpawnMultiplePlayers _playerSpawnManager;
 
 	void Start() {
 		_playerInputManager = GetComponent<PlayerInputManager>();
-		_playerInputManager.playerPrefab = playerPrefab;
+        _playerSpawnManager = GetComponent<SpawnMultiplePlayers>();
+        _playerInputManager.playerPrefab = playerPrefab;
 	}
 
 	void OnDrawGizmos() {
@@ -20,26 +22,30 @@ public class RespawnControllerScript : MonoBehaviour {
 			Gizmos.DrawSphere(point, .3f);
 		}
 	}
-	public void RespawnPlayer(float secondsToRespawn) {
-		StartCoroutine(RespawnPlayerTimer(secondsToRespawn));
+	public void RespawnPlayer(float secondsToRespawn, int playerId) {
+		StartCoroutine(RespawnPlayerTimer(secondsToRespawn, playerId));
 	}
 
-	private IEnumerator RespawnPlayerTimer(float secondsToRespawn) //playerID: diferenciar entre player 1, 2, 3 e 4
+	private IEnumerator RespawnPlayerTimer(float secondsToRespawn, int playerId) //playerID: diferenciar entre player 1, 2, 3 e 4
 	{
 		yield return new WaitForSeconds(secondsToRespawn);
 
-		Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
-
-		//var player = Instantiate(playerPrefab, respPos, Quaternion.identity);
-		PlayerInput player = _playerInputManager.JoinPlayer();
-		player.transform.position = respPos;
-        PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
-		playerBlowUp.OnBlowUp += () => {
-			RespawnPlayer(playerBlowUp.respawnTime);
-		};
-
+        //PlayerInput player = _playerInputManager.JoinPlayer();
+        PlayerInput player = _playerSpawnManager.SpawnPlayerByIndex(playerId);
+        SetupPlayer(player);
 	}
 
+    public void SetupPlayer(PlayerInput player)
+    {
+        Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
+        player.transform.position = respPos;
+
+        PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
+        playerBlowUp.OnBlowUp += () => {
+            RespawnPlayer(playerBlowUp.respawnTime, player.playerIndex);
+        };
+    }
+
 	[ContextMenu("SpawnPlayer")]
-	public void SpawnPlayer() => RespawnPlayer(0f);
+	public void SpawnPlayer() => RespawnPlayer(0f, -1);
 }
