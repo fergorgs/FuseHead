@@ -8,7 +8,6 @@ public class PlayerPause : MonoBehaviour
     [SerializeField] private GameEvent PauseEvent = default;
 
     private PlayerInput _playerInput = default;
-    private bool _paused = false;
 
     private void Awake()
     {
