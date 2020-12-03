@@ -1842,6 +1842,11 @@ PrefabInstance:
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 2128317468}
+    - target: {fileID: 1733702471448397456, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
+        type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1154275735}
     - target: {fileID: 7341785015131820351, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
         type: 3}
       propertyPath: m_IsActive

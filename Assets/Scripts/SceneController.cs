@@ -1,12 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
     public int TransitionSceneIndex = 0;
+
+    public bool IsNextLevelAvailable()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        string[] sceneNameParts = currentSceneName.Split('_');
+
+        string nextSceneName = sceneNameParts[0] + '_' + (int.Parse(sceneNameParts[1]) + 1).ToString("00") + ".unity";
+
+        string currentScenePath = SceneManager.GetActiveScene().path;
+        string scenePath = currentScenePath.Substring(0, currentScenePath.LastIndexOf('_')-2) + nextSceneName;
+
+        return SceneUtility.GetBuildIndexByScenePath(scenePath) != -1;
+    }
 
     public void LoadScene(int buildIndex)
     {
