@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,6 @@ public class PlayerControlls : MonoBehaviour
     public float runSpeed = 40f, horizontalMove;
 	public PlayerBlowUp playerBlow;
 
-
 	private bool jump = false;
 
 	public CharacterController2D characterController;
@@ -21,6 +21,11 @@ public class PlayerControlls : MonoBehaviour
         playerInput.actions["Move"].performed += OnMovePerformed;
         playerInput.actions["Jump"].started += OnJump;
         playerInput.actions["BlowUp"].started += OnBlowUp;
+    }
+
+    public void OnPauseEvent()
+    {
+        horizontalMove = 0f;
     }
 
     private void OnBlowUp(InputAction.CallbackContext obj)
@@ -40,7 +45,7 @@ public class PlayerControlls : MonoBehaviour
 
     void FixedUpdate()
     {
-		characterController.Move(horizontalMove, jump);
+	    characterController.Move(horizontalMove, jump);
 		jump = false;
 	}
 

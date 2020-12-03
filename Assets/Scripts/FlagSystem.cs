@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
-using UnityEditor;
+using RoboRyanTron.Unite2017.Events;
 
 public class FlagSystem : MonoBehaviour
 {
     [Header("Events")]
-    public UnityEvent OnGameVictory = new UnityEvent();
+    public GameEvent OnVictoryEvent = default;
 
     [Header("Flags")]
     [Tooltip("Add the flags in scene you want to be considered for winning. Consider using contex menu Get Flags in Scene to automate")]
@@ -41,7 +40,7 @@ public class FlagSystem : MonoBehaviour
         _remainingFlags--;
         if (_remainingFlags <= 0)
         {
-            OnGameVictory?.Invoke();
+            OnVictoryEvent?.Raise();
             Debug.Log("Game Won");
         }
     }

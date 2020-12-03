@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TimerUI : MonoBehaviour
 {
@@ -8,10 +9,7 @@ public class TimerUI : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (!gameTimer.IsPaused)
-        {
-            UpdateUI();
-        }
+        UpdateUI();
     }
 
     protected float GetPassedTime() => gameTimer.TimeElapsed;
