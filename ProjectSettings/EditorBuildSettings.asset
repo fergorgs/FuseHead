@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TransitionScene.unity
     guid: 1b946e971c69d4a32b082226df745bbd
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
-    guid: 767711337d12e7d469b09893c795206f
+    path: Assets/Scenes/StartMenu - Master.unity
+    guid: 361f3b13d5cb3764db74c905bd09bac0
   - enabled: 1
     path: Assets/Scenes/SinglePlayer/SP_01.unity
     guid: 36528453d0ade514f8f8582cc164506e
@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SinglePlayer/SP_03.unity
     guid: 6cf46ae00adfd8648ad9e6732aad1a5a
   - enabled: 1
-    path: Assets/Scenes/Multiplayer/MP_01.unity
+    path: Assets/Scenes/MultiPlayer/MP_01.unity
     guid: 2902352259eac2348b95f6f1b93d6d6b
   m_configObjects: {}
