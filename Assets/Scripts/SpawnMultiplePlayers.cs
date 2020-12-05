@@ -61,6 +61,7 @@ public class SpawnMultiplePlayers : MonoBehaviour
 
     public PlayerInput SpawnPlayerByIndex(int index)
     {
+        return playerInputManager.JoinPlayer(0);
         InputDevice device = playerIndexToDevice[index];
         return playerInputManager.JoinPlayer(playerIndex: index, pairWithDevice: device);
     }

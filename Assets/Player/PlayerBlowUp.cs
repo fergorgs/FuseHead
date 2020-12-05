@@ -24,6 +24,15 @@ public class PlayerBlowUp : MonoBehaviour {
             t += Time.deltaTime / blowUpTime;
 
     }
+
+    public void RestartBlowUp(float time)
+    {
+        blowUpTime = time;
+        t = 0;
+        StopCoroutine(BlowUpTimer());
+        StartCoroutine(BlowUpTimer());
+    }
+
     public void BlowUp() {
         Instantiate(explosion, transform.position, transform.rotation);
 
