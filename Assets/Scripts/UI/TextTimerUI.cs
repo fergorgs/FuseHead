@@ -4,6 +4,7 @@ using UnityEngine;
 public class TextTimerUI : TimerUI
 {
     [SerializeField] private TextMeshProUGUI _timeText = null;
+    [SerializeField] private string stringFormat = "F1";
 
     private void Awake()
     {
@@ -13,7 +14,7 @@ public class TextTimerUI : TimerUI
 
     protected override void UpdateUI()
     {
-        _timeText.SetText(GetRemainingTime().ToString("F1"));
+        _timeText.SetText(GetRemainingTime().ToString(stringFormat));
     }
 
     [ContextMenu("Set References", false, 0)]
