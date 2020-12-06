@@ -6,6 +6,7 @@ public class PlayerSoundManager : MonoBehaviour
 {
 
     [SerializeField] private ConfigSO config = null;
+    [SerializeField] private AudioEvent explosionAudio = default;
     private PlayerBlowUp _playerExplosion = null;
     private AudioSource _audioSource = null;
     private GameObject _audioSourceContainer = null;
@@ -60,8 +61,12 @@ public class PlayerSoundManager : MonoBehaviour
 
     private void PlayerExplosion_OnBlowUp()
     {
-        Debug.Log("Exploooosion");
-        _audioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
+        if(explosionAudio != null)
+        {
+            explosionAudio.Play(_audioSource);
+        }
+        else
+            _audioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
     }
 
     private void OnDestroy()

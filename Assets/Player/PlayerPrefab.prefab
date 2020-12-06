@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 4277103779535844484}
   - component: {fileID: -2057979038569853504}
   - component: {fileID: 2594929352625241345}
+  - component: {fileID: 3506814196776692289}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -335,6 +336,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseEvent: {fileID: 11400000, guid: cad990003d37aef41b11d76bb8121348, type: 2}
+--- !u!114 &3506814196776692289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847340973223716054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12444711b0004a49a281f6afe3fbd7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
+  explosionAudio: {fileID: 11400000, guid: c5bbc7e273d249046b659c0c47050e06, type: 2}
 --- !u!1 &6567416208939774800
 GameObject:
   m_ObjectHideFlags: 0
