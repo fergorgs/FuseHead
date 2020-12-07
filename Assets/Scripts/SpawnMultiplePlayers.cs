@@ -8,7 +8,7 @@ public class SpawnMultiplePlayers : MonoBehaviour
     [SerializeField] private PlayerInputManager playerInputManager = default;
     private RespawnControllerScript _respawner = null;
     private GameObject playerPrefab = null;
-
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera vcamera;
     private Dictionary<int, InputDevice> playerIndexToDevice;
 
     public void Start()
@@ -60,9 +60,11 @@ public class SpawnMultiplePlayers : MonoBehaviour
     }
 
     public PlayerInput SpawnPlayerByIndex(int index)
-    {
-        return playerInputManager.JoinPlayer(0);
-        InputDevice device = playerIndexToDevice[index];
-        return playerInputManager.JoinPlayer(playerIndex: index, pairWithDevice: device);
+    {   
+        var player = playerInputManager.JoinPlayer(0);
+        vcamera.Follow = player.transform;
+        return player;
+        /*InputDevice device = playerIndexToDevice[index];
+        return playerInputManager.JoinPlayer(playerIndex: index, pairWithDevice: device);*/
     }
 }
