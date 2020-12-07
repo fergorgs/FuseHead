@@ -7,7 +7,10 @@ public class ContinuosAudioEvent : AudioEvent
 
     public override void Play(AudioSource audioSource)
     {
-        if(audioSource.clip != audioClip)
+        if (audioClip == null) return;
+        if (!configs.SfxOn) return;
+
+        if (audioSource.clip != audioClip)
             audioSource.clip = audioClip;
         audioSource.volume = volume;
         if(!audioSource.isPlaying)

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161a969a02ce8184195de657030fb933, type: 3}
-  m_Name: Footsteps
+  m_Script: {fileID: 11500000, guid: 7912612d64b3e764b83a11a289a5e72c, type: 3}
+  m_Name: FlagGotten
   m_EditorClassIdentifier: 
-  volume: 0.9
+  volume: 0.3
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
-  audioClip: {fileID: 8300000, guid: a9735023aa0140b4f867a4857dfb979a, type: 3}
+  audioClip: {fileID: 8300000, guid: 695258d1bd48a174dad51cf47620023f, type: 3}

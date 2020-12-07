@@ -28,13 +28,11 @@ public class PlayerSoundManager : MonoBehaviour
     #region Auxiliar
     private void SubscribeToEvents()
     {
-        config.OnSfxSwitch += Config_OnSFXSwitch;
         _playerExplosion.OnBlowUp += PlayerExplosion_OnBlowUp;
     }
 
     private void UnsubscribeToEvents()
     {
-        config.OnSfxSwitch -= Config_OnSFXSwitch;
         _playerExplosion.OnBlowUp -= PlayerExplosion_OnBlowUp;
     }
 
@@ -46,13 +44,11 @@ public class PlayerSoundManager : MonoBehaviour
 
         _postDestroyAudioSource.playOnAwake = false;
         _postDestroyAudioSource.loop = false;
-        _postDestroyAudioSource.mute = !config.SfxOn;
 
         _loopingAudioSource = gameObject.AddComponent<AudioSource>();
 
         _loopingAudioSource.loop = true;
         _loopingAudioSource.playOnAwake = false;
-        _loopingAudioSource.mute = !config.SfxOn;
 
     }
 
