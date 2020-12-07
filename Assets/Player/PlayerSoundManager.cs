@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSoundManager : MonoBehaviour
 {
@@ -6,6 +8,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private ConfigSO config = null;
     [SerializeField] private AudioEvent explosionAudio = default;
     [SerializeField] private AudioEvent footstepsAudio = default;
+    [SerializeField] private AudioEvent jumpAudio = default;
 
     private PlayerControlls _playerControlls = null;
     private CharacterController2D _characterController = null;
@@ -29,11 +32,18 @@ public class PlayerSoundManager : MonoBehaviour
     private void SubscribeToEvents()
     {
         _playerExplosion.OnBlowUp += PlayerExplosion_OnBlowUp;
+        _characterController.OnJumpEvent.AddListener(JumpSound);
+    }
+
+    private void JumpSound()
+    {
+        jumpAudio?.Play(_postDestroyAudioSource);
     }
 
     private void UnsubscribeToEvents()
     {
         _playerExplosion.OnBlowUp -= PlayerExplosion_OnBlowUp;
+        _characterController.OnJumpEvent.RemoveListener(JumpSound);
     }
 
     private void ConfigAudioSource()

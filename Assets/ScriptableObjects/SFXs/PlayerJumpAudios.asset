@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161a969a02ce8184195de657030fb933, type: 3}
-  m_Name: Footsteps
+  m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
+  m_Name: PlayerJumpAudios
   m_EditorClassIdentifier: 
-  volume: 0.8
+  volume: 0.7
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
-  audioClip: {fileID: 8300000, guid: a9735023aa0140b4f867a4857dfb979a, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 14c672a97bad27442b870037c08c478f, type: 3}
+  - {fileID: 8300000, guid: 0376e16e34efcdf46b530148df4597dd, type: 3}
+  - {fileID: 8300000, guid: 37f82a1f8a8a6d9499dad5058203814c, type: 3}

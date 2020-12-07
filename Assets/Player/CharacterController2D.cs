@@ -24,6 +24,7 @@ public class CharacterController2D : MonoBehaviour {
     [Header("Events")]
     [Space]
     public UnityEvent OnLandEvent;
+    public UnityEvent OnJumpEvent;
 
 
     [System.Serializable]
@@ -95,6 +96,8 @@ public class CharacterController2D : MonoBehaviour {
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 m_Grounded = false;
                 m_StartJumpBuffer = 0f;
+
+                OnJumpEvent?.Invoke();
             }
         }
 
