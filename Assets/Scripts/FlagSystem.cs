@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using RoboRyanTron.Unite2017.Events;
 
 public class FlagSystem : MonoBehaviour
@@ -10,6 +12,9 @@ public class FlagSystem : MonoBehaviour
     [Tooltip("Add the flags in scene you want to be considered for winning. Consider using contex menu Get Flags in Scene to automate")]
     [SerializeField] private FlagObject[] _flags = null;
     private int _remainingFlags = 0;
+
+    [Header("Timer")]
+    [SerializeField] private float winAnimationTime = 1.0f;
 
     [ContextMenu("Get Flags in Scene")]
     public void GetFlagsInScene()
@@ -40,9 +45,16 @@ public class FlagSystem : MonoBehaviour
         _remainingFlags--;
         if (_remainingFlags <= 0)
         {
-            OnVictoryEvent?.Raise();
+            StartCoroutine(WinScreen());
             Debug.Log("Game Won");
         }
+    }
+
+    private IEnumerator WinScreen()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        OnVictoryEvent?.Raise();
     }
 
     private void Start()
