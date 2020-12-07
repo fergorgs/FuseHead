@@ -1,14 +1,22 @@
 ﻿using System;
-using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSoundManager : MonoBehaviour
 {
 
     [SerializeField] private ConfigSO config = null;
+    [SerializeField] private AudioEvent explosionAudio = default;
+    [SerializeField] private AudioEvent footstepsAudio = default;
+    [SerializeField] private AudioEvent jumpAudio = default;
+    [SerializeField] private AudioEvent landingAudio = default;
+
+    private PlayerControlls _playerControlls = null;
+    private CharacterController2D _characterController = null;
     private PlayerBlowUp _playerExplosion = null;
-    private AudioSource _audioSource = null;
-    private GameObject _audioSourceContainer = null;
+    private AudioSource _postDestroyAudioSource = null;
+    private AudioSource _loopingAudioSource = null;
+    private GameObject _postDestroyAudioSourceContainer = null;
 
 
     private void Awake()
@@ -16,37 +24,39 @@ public class PlayerSoundManager : MonoBehaviour
         ConfigAudioSource();
 
         _playerExplosion = GetComponent<PlayerBlowUp>();
+        _playerControlls = GetComponent<PlayerControlls>();
+        _characterController = GetComponent<CharacterController2D>();
         SubscribeToEvents();
     }
 
     #region Auxiliar
     private void SubscribeToEvents()
     {
-        config.OnSfxSwitch += Config_OnSFXSwitch;
         _playerExplosion.OnBlowUp += PlayerExplosion_OnBlowUp;
+        _characterController.OnJumpEvent.AddListener(JumpSound);
+        _characterController.OnLandEvent.AddListener(LandingSound);
     }
 
     private void UnsubscribeToEvents()
     {
-        config.OnSfxSwitch -= Config_OnSFXSwitch;
         _playerExplosion.OnBlowUp -= PlayerExplosion_OnBlowUp;
+        _characterController.OnJumpEvent.RemoveListener(JumpSound);
     }
 
     private void ConfigAudioSource()
     {
-        _audioSourceContainer = new GameObject();
-        _audioSourceContainer.name = name + "_AudioSource";
-        _audioSource = _audioSourceContainer.AddComponent<AudioSource>();
+        _postDestroyAudioSourceContainer = new GameObject();
+        _postDestroyAudioSourceContainer.name = name + "_AudioSource";
+        _postDestroyAudioSource = _postDestroyAudioSourceContainer.AddComponent<AudioSource>();
 
-        _audioSource.playOnAwake = false;
-        _audioSource.loop = false;
-        _audioSource.mute = !config.SfxOn;
-    }
+        _postDestroyAudioSource.playOnAwake = false;
+        _postDestroyAudioSource.loop = false;
 
-    private void Config_OnSFXSwitch(bool value)
-    {
-        if(_audioSource != null)
-            _audioSource.mute = !value;
+        _loopingAudioSource = gameObject.AddComponent<AudioSource>();
+
+        _loopingAudioSource.loop = true;
+        _loopingAudioSource.playOnAwake = false;
+
     }
     #endregion
 
@@ -54,19 +64,42 @@ public class PlayerSoundManager : MonoBehaviour
     {
         if(config != null)
         {
-            _audioSource.outputAudioMixerGroup = config.audioMixer.FindMatchingGroups("SFX")[0];
+            UnityEngine.Audio.AudioMixerGroup audioMixerGroup = config.audioMixer.FindMatchingGroups("SFX")[0];
+            _postDestroyAudioSource.outputAudioMixerGroup = audioMixerGroup;
+            _loopingAudioSource.outputAudioMixerGroup = audioMixerGroup;
+        }
+    }
+
+    private void Update()
+    {
+        const float threshold = 0.01f;
+        bool isMoving = Mathf.Abs(_playerControlls.horizontalMove) >= threshold;
+        if (_characterController.IsGrounded && isMoving)
+        {
+            footstepsAudio.Play(_loopingAudioSource);
+        }
+        else
+        {
+            _loopingAudioSource.Stop();
         }
     }
 
     private void PlayerExplosion_OnBlowUp()
     {
-        Debug.Log("Exploooosion");
-        _audioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
+        if(explosionAudio != null)
+        {
+            explosionAudio.Play(_postDestroyAudioSource);
+        }
+        else
+            _postDestroyAudioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
     }
+
+    private void LandingSound() => landingAudio?.Play(_postDestroyAudioSource);
+    private void JumpSound() => jumpAudio?.Play(_postDestroyAudioSource);
 
     private void OnDestroy()
     {
         UnsubscribeToEvents();
-        Destroy(_audioSourceContainer, 1f);
+        Destroy(_postDestroyAudioSourceContainer, 1f);
     }
 }

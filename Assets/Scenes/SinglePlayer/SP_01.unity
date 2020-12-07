@@ -544,6 +544,11 @@ PrefabInstance:
       propertyPath: gameTimer
       value: 
       objectReference: {fileID: 255585394}
+    - target: {fileID: 9014010826695792522, guid: ade67aefd978e4b4ab53fa90c81c0769,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19.329834
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8740943647454425472, guid: ade67aefd978e4b4ab53fa90c81c0769, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ade67aefd978e4b4ab53fa90c81c0769, type: 3}
@@ -1364,6 +1369,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5733221801028750363, guid: 482710612f34ae14887aa0cfabc04589,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.399902
+      objectReference: {fileID: 0}
     - target: {fileID: 6998326953468698342, guid: 482710612f34ae14887aa0cfabc04589,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1847,6 +1857,11 @@ PrefabInstance:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1154275735}
+    - target: {fileID: 4828385424044701159, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -39.399902
+      objectReference: {fileID: 0}
     - target: {fileID: 7341785015131820351, guid: 9aa2c77429a09ed4a907cfb2192c07c4,
         type: 3}
       propertyPath: m_IsActive
