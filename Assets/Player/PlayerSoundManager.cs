@@ -9,6 +9,7 @@ public class PlayerSoundManager : MonoBehaviour
     [SerializeField] private AudioEvent explosionAudio = default;
     [SerializeField] private AudioEvent footstepsAudio = default;
     [SerializeField] private AudioEvent jumpAudio = default;
+    [SerializeField] private AudioEvent landingAudio = default;
 
     private PlayerControlls _playerControlls = null;
     private CharacterController2D _characterController = null;
@@ -33,11 +34,7 @@ public class PlayerSoundManager : MonoBehaviour
     {
         _playerExplosion.OnBlowUp += PlayerExplosion_OnBlowUp;
         _characterController.OnJumpEvent.AddListener(JumpSound);
-    }
-
-    private void JumpSound()
-    {
-        jumpAudio?.Play(_postDestroyAudioSource);
+        _characterController.OnLandEvent.AddListener(LandingSound);
     }
 
     private void UnsubscribeToEvents()
@@ -60,14 +57,6 @@ public class PlayerSoundManager : MonoBehaviour
         _loopingAudioSource.loop = true;
         _loopingAudioSource.playOnAwake = false;
 
-    }
-
-    private void Config_OnSFXSwitch(bool value)
-    {
-        if(_postDestroyAudioSource != null)
-            _postDestroyAudioSource.mute = !value;
-        if (_loopingAudioSource != null)
-            _loopingAudioSource.mute = !value;
     }
     #endregion
 
@@ -104,6 +93,9 @@ public class PlayerSoundManager : MonoBehaviour
         else
             _postDestroyAudioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
     }
+
+    private void LandingSound() => landingAudio?.Play(_postDestroyAudioSource);
+    private void JumpSound() => jumpAudio?.Play(_postDestroyAudioSource);
 
     private void OnDestroy()
     {

@@ -355,6 +355,7 @@ MonoBehaviour:
   explosionAudio: {fileID: 11400000, guid: c5bbc7e273d249046b659c0c47050e06, type: 2}
   footstepsAudio: {fileID: 11400000, guid: 23d6ea43c77db854897e69f241b3f657, type: 2}
   jumpAudio: {fileID: 11400000, guid: 66b40ad1bf53c5a4f98211f61a47908c, type: 2}
+  landingAudio: {fileID: 11400000, guid: 9910cb1048caffc4ba837df7d5ab3554, type: 2}
 --- !u!1 &6567416208939774800
 GameObject:
   m_ObjectHideFlags: 0
