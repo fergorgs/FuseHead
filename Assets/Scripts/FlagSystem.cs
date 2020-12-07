@@ -13,8 +13,6 @@ public class FlagSystem : MonoBehaviour
     [SerializeField] private FlagObject[] _flags = null;
     private int _remainingFlags = 0;
 
-    [Header("Timer")]
-    [SerializeField] private float winAnimationTime = 1.0f;
 
     [ContextMenu("Get Flags in Scene")]
     public void GetFlagsInScene()
@@ -45,16 +43,9 @@ public class FlagSystem : MonoBehaviour
         _remainingFlags--;
         if (_remainingFlags <= 0)
         {
-            StartCoroutine(WinScreen());
+            OnVictoryEvent?.Raise();
             Debug.Log("Game Won");
         }
-    }
-
-    private IEnumerator WinScreen()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        OnVictoryEvent?.Raise();
     }
 
     private void Start()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -12,6 +13,7 @@ public class EndOfLevelUI : MonoBehaviour
     [Header("Prefab References")]
     [SerializeField] private Button _retryBtn, _nextLevelBtn, _mainMenuBtn = null;
     [SerializeField] private TextMeshProUGUI _headerText;
+
 
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class EndOfLevelUI : MonoBehaviour
         {
             eventSystem.SetSelectedGameObject(_nextLevelBtn.gameObject);
         }
+
     }
 
     public void OnGameOver()
