@@ -4,34 +4,43 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour {
 
-    public GameObject bullet;
-    public Transform bulletPoint;
+    public GameObject bullet = null;
+    public Transform bulletPoint = null;
+    [SerializeField] private AudioEvent fireAudio = default;
 
-    private TurretRotationScript head = null;
+    private TurretRotationScript _head = null;
+    private AudioSource _audioSource = null;
 
     public float timeToShoot = 1f;
-    private float elapsedTime = 0f;
+    private float _elapsedTime = 0f;
 
-    void Awake() {
-        head = GetComponentInChildren<TurretRotationScript>();
+    private void Awake()
+    {
+        _head = GetComponentInChildren<TurretRotationScript>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
-    void Fire() {
-        if(head.target)
+    private void Fire()
+    {
+        if(_head.target)
             Instantiate(bullet, bulletPoint.position, bulletPoint.rotation);
+        fireAudio?.Play(_audioSource);
     }
 
     // Update is called once per frame
-    void Update() {
-        if(!head.target) {
-            elapsedTime = 0;
+    private void Update()
+    {
+        if(!_head.target)
+        {
+            _elapsedTime = 0;
             return;
         }
-        if(elapsedTime > timeToShoot) {
+        if(_elapsedTime > timeToShoot)
+        {
             Fire();
-            elapsedTime = 0f;
+            _elapsedTime = 0f;
         }
-        elapsedTime += Time.deltaTime;
+        _elapsedTime += Time.deltaTime;
     }
 
 }
