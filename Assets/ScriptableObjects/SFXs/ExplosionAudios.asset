@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
   m_Name: ExplosionAudios
   m_EditorClassIdentifier: 
-  volume: 1
-  audioClips: []
+  volume: 0.6
+  audioClips:
+  - {fileID: 8300000, guid: e846ed1ca23f1b14db4b93fd4301cdf0, type: 3}
+  - {fileID: 8300000, guid: 36500ad209650b146bdf7ef9e24b99db, type: 3}
+  - {fileID: 8300000, guid: ed0faba1aaebc114ca5ab64531791e66, type: 3}
+  - {fileID: 8300000, guid: c719512081cb82048a89b47ee7d8788c, type: 3}
+  - {fileID: 8300000, guid: 79e0a6991f9dece41910a9794cf9721b, type: 3}
+  - {fileID: 8300000, guid: 60955ca44407b7c4bb0b194ae444d21e, type: 3}
+  - {fileID: 8300000, guid: f9865dc3f4154db478580cc70daa0017, type: 3}

@@ -350,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
   explosionAudio: {fileID: 11400000, guid: c5bbc7e273d249046b659c0c47050e06, type: 2}
+  footstepsAudio: {fileID: 11400000, guid: 23d6ea43c77db854897e69f241b3f657, type: 2}
 --- !u!1 &6567416208939774800
 GameObject:
   m_ObjectHideFlags: 0

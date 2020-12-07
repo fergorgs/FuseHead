@@ -19,10 +19,12 @@ public class CharacterController2D : MonoBehaviour {
     ///</summary>
     [SerializeField] private float ghostJumpDelay = 130f;
 
+    public bool IsGrounded => m_Grounded;
+
     [Header("Events")]
     [Space]
-
     public UnityEvent OnLandEvent;
+
 
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> {}
