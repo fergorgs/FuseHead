@@ -5,21 +5,27 @@ using UnityEngine;
 public class Trampolim : MonoBehaviour
 {
 
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator = null;
+    [SerializeField] private AudioEvent activateAudio = null;
+    [SerializeField] private float force = 10;
+
+    private AudioSource _audioSource = null;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
-    [SerializeField] private float force;
-    // Start is called before the first frame update
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             animator.Play("Activated");
-            //other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            var rigidbody = other.GetComponent<Rigidbody2D>();
-            var vel = (Vector2)transform.up * force - rigidbody.velocity;
+            activateAudio?.Play(_audioSource);
+
+            Rigidbody2D rigidbody = other.GetComponent<Rigidbody2D>();
+            Vector2 vel = (Vector2)transform.up * force - rigidbody.velocity;
             rigidbody.velocity = Vector2.ClampMagnitude(vel, force * 1.5f);
         }
     }
