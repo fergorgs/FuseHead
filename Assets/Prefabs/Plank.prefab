@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioEvent: {fileID: 11400000, guid: 38f7c043bfe591440b6a41f24676ee5b, type: 2}
-  minSpeed: 0.4
+  minSpeed: 2
   minSpeedHit: 0
   inPlayTime: 1
 --- !u!82 &-4383415454443626368
