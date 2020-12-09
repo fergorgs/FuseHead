@@ -214,6 +214,17 @@
                 },
                 {
                     "name": "",
+                    "id": "07e6c815-18d0-4e84-88dd-b7fb822f898c",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b64270a5-c93b-428b-944e-467690f568b4",
                     "path": "<Keyboard>/p",
                     "interactions": "",
