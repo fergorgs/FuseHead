@@ -3,7 +3,8 @@
 public class BlastResistence : MonoBehaviour
 {
     [SerializeField] DestructableItem destructableItem = null;
-    [SerializeField] private ParticleSystem capturedEffects = null;
+    [SerializeField] private ParticleSystem explodeEffects = null;
+    [SerializeField] private ParticleSystem damageEffects = null;
     private float curLife;
 
     private SpriteRenderer _spriteRenderer = null;
@@ -21,11 +22,11 @@ public class BlastResistence : MonoBehaviour
     {
         if (curLife <= 0)
         {
-            if (capturedEffects != null)
+            if (explodeEffects != null)
             {
-                capturedEffects.transform.parent = null;
-                capturedEffects.Play();
-                Destroy(capturedEffects.gameObject, 2f);
+                explodeEffects.transform.parent = null;
+                explodeEffects.Play();
+                Destroy(explodeEffects.gameObject, 2f);
             }
             Destroy(gameObject);
             return;
@@ -48,6 +49,8 @@ public class BlastResistence : MonoBehaviour
 	public void Degrade(int points)
 	{
 		curLife -= points;
+        if (damageEffects != null)
+            damageEffects.Play();
         VerifyDestructionAmount();
     }
 }

@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructableItem: {fileID: 11400000, guid: e12f69144b940f94d94e3414768312fa, type: 2}
-  capturedEffects: {fileID: 0}
+  explodeEffects: {fileID: 5260243366516703886}
+  damageEffects: {fileID: 0}
 --- !u!1 &3068098600696552322
 GameObject:
   m_ObjectHideFlags: 0

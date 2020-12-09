@@ -19,6 +19,9 @@ public class CharacterController2D : MonoBehaviour {
     ///</summary>
     [SerializeField] private float ghostJumpDelay = 130f;
 
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem _dustParticle;
+
     public bool IsGrounded => m_Grounded;
 
     [Header("Events")]
@@ -53,7 +56,10 @@ public class CharacterController2D : MonoBehaviour {
             if (colliders[i].gameObject != gameObject) {
                 m_Grounded = true;
                 if (!wasGrounded)
+                {
                     OnLandEvent.Invoke();
+                    MakeDust();
+                }
             }
         }
         if (wasGrounded && !m_Grounded && m_Rigidbody2D.velocity.y < 0f) {
@@ -64,10 +70,12 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     public void Move(float move, bool jump) {
-
+        if (move != 0 && m_Grounded)
+        {
+            MakeDust();
+        }
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl) {
-
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -90,6 +98,7 @@ public class CharacterController2D : MonoBehaviour {
         if (m_Grounded) {
             var delay = Time.time - m_StartJumpBuffer;
             if (jump || delay < m_JumpBufferTime) {
+                MakeDust();
                 var vel = m_Rigidbody2D.velocity;
                 vel.y = 0f;
                 m_Rigidbody2D.velocity = vel;
@@ -104,6 +113,7 @@ public class CharacterController2D : MonoBehaviour {
     }
 
     private void Flip() {
+        MakeDust();
         // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
 
@@ -111,6 +121,10 @@ public class CharacterController2D : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    void MakeDust() {
+        _dustParticle.Play();
     }
 
 }
