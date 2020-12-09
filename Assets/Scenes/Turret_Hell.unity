@@ -1723,7 +1723,7 @@ PrefabInstance:
     - target: {fileID: 3586561675275292463, guid: 412c413a1d9ab944c9d9b7cf3d398e78,
         type: 3}
       propertyPath: orthographic size
-      value: 8.438438
+      value: 8.440861
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412c413a1d9ab944c9d9b7cf3d398e78, type: 3}
@@ -2290,7 +2290,7 @@ GameObject:
   - component: {fileID: 1970932968}
   - component: {fileID: 1970932967}
   - component: {fileID: 1970932966}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
