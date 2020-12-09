@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161a969a02ce8184195de657030fb933, type: 3}
-  m_Name: Footsteps
+  m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
+  m_Name: CementCollision
   m_EditorClassIdentifier: 
-  volume: 0.15
+  volume: 0.4
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
-  audioClip: {fileID: 8300000, guid: 9991582052e6acf41baf37ec2ac3a128, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 3884d09fdc815dc46bfccdce1b6d0a29, type: 3}
