@@ -3,6 +3,7 @@
 public class BlastResistence : MonoBehaviour
 {
     [SerializeField] DestructableItem destructableItem = null;
+    [SerializeField] private ParticleSystem capturedEffects = null;
     private float curLife;
 
     private SpriteRenderer _spriteRenderer = null;
@@ -20,6 +21,12 @@ public class BlastResistence : MonoBehaviour
     {
         if (curLife <= 0)
         {
+            if (capturedEffects != null)
+            {
+                capturedEffects.transform.parent = null;
+                capturedEffects.Play();
+                Destroy(capturedEffects.gameObject, 2f);
+            }
             Destroy(gameObject);
             return;
         }
