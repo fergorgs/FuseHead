@@ -32,6 +32,7 @@ public class RespawnControllerScript : MonoBehaviour {
 
         //PlayerInput player = _playerInputManager.JoinPlayer();
         PlayerInput player = _playerSpawnManager.SpawnPlayerByIndex(playerId);
+		player.GetComponent<PlayerColor>().SetPlayerColor(playerId);
         SetupPlayer(player);
 	}
 

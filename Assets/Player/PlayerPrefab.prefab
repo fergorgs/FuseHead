@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: -2057979038569853504}
   - component: {fileID: 2594929352625241345}
   - component: {fileID: 3506814196776692289}
+  - component: {fileID: 5006232345479649933}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -356,6 +357,24 @@ MonoBehaviour:
   footstepsAudio: {fileID: 11400000, guid: 23d6ea43c77db854897e69f241b3f657, type: 2}
   jumpAudio: {fileID: 11400000, guid: 66b40ad1bf53c5a4f98211f61a47908c, type: 2}
   landingAudio: {fileID: 11400000, guid: 9910cb1048caffc4ba837df7d5ab3554, type: 2}
+--- !u!114 &5006232345479649933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847340973223716054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34147ff25f3443ecb34174294933138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
+  - {r: 0.2216981, g: 0.7047815, b: 1, a: 1}
+  - {r: 0.39841846, g: 1, b: 0.3160377, a: 1}
+  torsoSprite: {fileID: 804586324705914911}
 --- !u!1 &6567416208939774800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1249,12 @@ Transform:
 --- !u!1 &5416836947074265791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1105796973334544895, guid: 5d821b4eefa21014c9e8d987ea5096ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4290543969414384830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &804586324705914911 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3504194126081440929, guid: 5d821b4eefa21014c9e8d987ea5096ef,
     type: 3}
   m_PrefabInstance: {fileID: 4290543969414384830}
   m_PrefabAsset: {fileID: 0}
