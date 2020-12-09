@@ -5579,6 +5579,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1717599194}
@@ -5587,6 +5597,36 @@ PrefabInstance:
       propertyPath: joinBtn
       value: 
       objectReference: {fileID: 1546492675}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: fb5454fc-473f-4eba-86f9-9c5a0b491561
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <HID::Microntek              USB Joystick          >/button3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: bf9bab6f-55bc-45a7-a635-57baf650be84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <HID::Microntek              USB Joystick          >/button2
+      objectReference: {fileID: 0}
     - target: {fileID: 3451725972959259268, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
