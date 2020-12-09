@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using RoboRyanTron.Unite2017.Events;
 
 public class FlagSystem : MonoBehaviour
@@ -10,6 +12,7 @@ public class FlagSystem : MonoBehaviour
     [Tooltip("Add the flags in scene you want to be considered for winning. Consider using contex menu Get Flags in Scene to automate")]
     [SerializeField] private FlagObject[] _flags = null;
     private int _remainingFlags = 0;
+
 
     [ContextMenu("Get Flags in Scene")]
     public void GetFlagsInScene()
