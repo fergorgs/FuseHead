@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SinglePlayer/SP_06.unity
     guid: 521022c3c4fee2a0e9c25081452ffdd5
   - enabled: 1
+    path: Assets/Scenes/SinglePlayer/SP_07.unity
+    guid: 08d826941d224024cb939af5d593ac50
+  - enabled: 1
     path: Assets/Scenes/Multiplayer/MP_01.unity
     guid: 2902352259eac2348b95f6f1b93d6d6b
   - enabled: 1
