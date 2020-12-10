@@ -47,7 +47,6 @@ public class RespawnControllerScript : MonoBehaviour {
 		if (playerSpawnPoints[playerId].Count != 0)
 		{
 			PlayerInput player = _playerSpawnManager.SpawnPlayerByIndex(playerId);
-			player.GetComponent<PlayerColor>().SetPlayerColor(playerId);
 			SetupPlayer(player, playerId);
 		}
 	}
@@ -60,7 +59,9 @@ public class RespawnControllerScript : MonoBehaviour {
 
         player.transform.position = respPos;
 
-        PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
+		player.GetComponent<PlayerColor>().SetPlayerColor(playerId);
+
+		PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
         playerBlowUp.OnBlowUp += () => {
             RespawnPlayer(playerBlowUp.respawnTime, player.playerIndex);
         };
