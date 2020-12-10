@@ -10824,7 +10824,7 @@ PrefabInstance:
     - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
       propertyPath: joinAction.m_SingletonActionBindings.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
@@ -10870,6 +10870,21 @@ PrefabInstance:
         type: 3}
       propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Path
       value: <HID::Microntek              USB Joystick          >/button2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 9b367d86-6aff-43fb-8bf4-7b60ed474616
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Mouse>/leftButton
       objectReference: {fileID: 0}
     - target: {fileID: 3451725972959259268, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
