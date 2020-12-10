@@ -66,12 +66,14 @@ public class PlayerJoinUI : MonoBehaviour
         if (!eventSystem.currentSelectedGameObject.name.Equals(joinBtn.name))
             return;
 
+        InputDevice device = inputCtx.control.device;
+
         // Check Device Compability
         if (!playerActionAsset.actionMaps[0].IsUsableWithDevice(inputCtx.control.device))
-            return;
+            device = InputSystem.GetDevice("Keyboard");
 
         // Check if device has already joined
-        if (_joinedPlayersSlot.ContainsKey(inputCtx.control.device))
+        if (_joinedPlayersSlot.ContainsKey(device))
             return;
 
         // Search Available Slot
@@ -81,7 +83,7 @@ public class PlayerJoinUI : MonoBehaviour
         SetJoinedIndex(_joinedIndex + 1);
 
         // Assign player to slot
-        _joinedPlayersSlot[inputCtx.control.device] = _joinedIndex;
+        _joinedPlayersSlot[device] = _joinedIndex;
 
         // Change UI to show assigned player
         int i = 0;
