@@ -328,7 +328,9 @@ MonoBehaviour:
   - {fileID: 299177047}
   prevBtn: {fileID: 1301902722}
   nextBtn: {fileID: 266900687}
+  homeBtn: {fileID: 854124947}
   headerTxt: {fileID: 2130374585}
+  eventSystem: {fileID: 1717599194}
 --- !u!224 &126157432 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5302621721260719933, guid: 043fee1c376443eafa0a2b0cd01b1ca0,
