@@ -4805,10 +4805,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6886361896114229701, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229720, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_Name
       value: SPLevelSelectionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886361896114229720, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 256751ff580e14b4e97f9f824d14885d, type: 3}
@@ -5565,6 +5575,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2602849667365836754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7704843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1695755
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.02638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598013, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602849667559598015, guid: 5d174c425cd02c9459220dd07c70e752,
+        type: 3}
+      propertyPath: m_Name
+      value: NoMouseCursor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d174c425cd02c9459220dd07c70e752, type: 3}
 --- !u!1001 &3451725974578209667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5626,6 +5705,76 @@ PrefabInstance:
         type: 3}
       propertyPath: leaveAction.m_SingletonActionBindings.Array.data[1].m_Path
       value: <HID::Microntek              USB Joystick          >/button2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 56fd049a-caf5-400b-9c4d-e3758989243b
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Mouse>/leftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[3].m_Name
+      value: modifier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[3].m_Id
+      value: be4f941c-2e48-4906-90d7-27f6d18798de
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[3].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[3].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[4].m_Name
+      value: button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[4].m_Id
+      value: e1c2a238-4244-47b1-8959-815f165e99db
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[4].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[4].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005500645250949032, guid: 8893ef399328a1448978ba3452146cd4,
+        type: 3}
+      propertyPath: joinAction.m_SingletonActionBindings.Array.data[2].m_Interactions
+      value: Press
       objectReference: {fileID: 0}
     - target: {fileID: 3451725972959259268, guid: 8893ef399328a1448978ba3452146cd4,
         type: 3}
