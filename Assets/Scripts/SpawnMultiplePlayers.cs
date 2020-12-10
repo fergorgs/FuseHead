@@ -36,6 +36,8 @@ public class SpawnMultiplePlayers : MonoBehaviour
     public void SpawnJoinedPlayers()
     {
         int numPlayers = PlayerPrefs.GetInt("NumPlayers", 0);
+        _respawner.SetupRespawnPointsToPlayers(numPlayers);
+
 
         if (numPlayers <= 0)
         {
@@ -52,9 +54,8 @@ public class SpawnMultiplePlayers : MonoBehaviour
             {
                 InputDevice device = InputSystem.GetDeviceById(deviceId);
                 PlayerInput player = playerInputManager.JoinPlayer(playerIndex: i, pairWithDevice: device);
-                player.GetComponent<PlayerColor>().SetPlayerColor(player.playerIndex);
                 playerIndexToDevice[player.playerIndex] = device;
-                _respawner.SetupPlayer(player);
+                _respawner.SetupPlayer(player, player.playerIndex);
             }
         }
     }

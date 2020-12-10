@@ -10,6 +10,8 @@ public class RespawnControllerScript : MonoBehaviour {
 	private PlayerInputManager _playerInputManager;
 	private SpawnMultiplePlayers _playerSpawnManager;
 
+	private List<Vector3>[] playerSpawnPoints = new List<Vector3>[4];
+
 	void Start() {
 		_playerInputManager = GetComponent<PlayerInputManager>();
         _playerSpawnManager = GetComponent<SpawnMultiplePlayers>();
@@ -26,19 +28,36 @@ public class RespawnControllerScript : MonoBehaviour {
 		StartCoroutine(RespawnPlayerTimer(secondsToRespawn, playerId));
 	}
 
+	public void SetupRespawnPointsToPlayers(int playerCount) {
+		for (int i = 0; i < playerCount; i++) {
+			playerSpawnPoints[i] = new List<Vector3>();
+        }
+
+		int p = 0;
+		foreach (var point in respawnPoints) {
+			playerSpawnPoints[p % playerCount].Add(point);
+			p++;
+        }
+    }
+
 	private IEnumerator RespawnPlayerTimer(float secondsToRespawn, int playerId) //playerID: diferenciar entre player 1, 2, 3 e 4
 	{
 		yield return new WaitForSeconds(secondsToRespawn);
 
-        //PlayerInput player = _playerInputManager.JoinPlayer();
-        PlayerInput player = _playerSpawnManager.SpawnPlayerByIndex(playerId);
-		player.GetComponent<PlayerColor>().SetPlayerColor(playerId);
-        SetupPlayer(player);
+		if (playerSpawnPoints[playerId].Count != 0)
+		{
+			PlayerInput player = _playerSpawnManager.SpawnPlayerByIndex(playerId);
+			player.GetComponent<PlayerColor>().SetPlayerColor(playerId);
+			SetupPlayer(player, playerId);
+		}
 	}
 
-    public void SetupPlayer(PlayerInput player)
+    public void SetupPlayer(PlayerInput player, int playerId)
     {
-        Vector3 respPos = respawnPoints[Random.Range(0, respawnPoints.Length)];
+		Vector3 respPos = playerSpawnPoints[playerId][0];
+		playerSpawnPoints[playerId].RemoveAt(0);
+		playerSpawnPoints[playerId].Add(respPos);
+
         player.transform.position = respPos;
 
         PlayerBlowUp playerBlowUp = player.GetComponent<PlayerBlowUp>();
