@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.EventSystems;
 
 public class Instructions : MonoBehaviour
 {
     [SerializeField] private GameObject[] instructions;
-    [SerializeField] private GameObject prevBtn, nextBtn;
+    [SerializeField] private GameObject prevBtn, nextBtn, homeBtn;
+    [SerializeField] private TMP_Text headerTxt;
+    [SerializeField] private EventSystem eventSystem = default;
     private int activeIndex = 0;
 
     private void OnEnable()
@@ -16,6 +20,7 @@ public class Instructions : MonoBehaviour
         activeIndex = 0;
         instructions[activeIndex].SetActive(true);
         prevBtn.SetActive(false);
+        nextBtn.SetActive(true);
     }
 
     public void NextInstruction()
@@ -29,19 +34,16 @@ public class Instructions : MonoBehaviour
             {
                 prevBtn.SetActive(true);
                 nextBtn.SetActive(true);
-            }
-            else if (activeIndex == 0)
-            {
-                prevBtn.SetActive(false);
-                nextBtn.SetActive(true);
+                headerTxt.text = "Como Jogar";
             }
             else if (activeIndex == instructions.Length - 1)
             {
                 prevBtn.SetActive(true);
                 nextBtn.SetActive(false);
+                eventSystem.SetSelectedGameObject(homeBtn);
+                headerTxt.text = "Equipe";
             }
         }
-        Debug.Log(activeIndex);
     }
 
     public void PreviousInstruction()
@@ -55,17 +57,15 @@ public class Instructions : MonoBehaviour
             {
                 prevBtn.SetActive(true);
                 nextBtn.SetActive(true);
+                headerTxt.text = "Como Jogar";
             }
             else if (activeIndex == 0)
             {
                 prevBtn.SetActive(false);
                 nextBtn.SetActive(true);
+                eventSystem.SetSelectedGameObject(homeBtn);
             }
-            else if (activeIndex == instructions.Length - 1)
-            {
-                prevBtn.SetActive(true);
-                nextBtn.SetActive(false);
-            }
+            
         }
     }
 
