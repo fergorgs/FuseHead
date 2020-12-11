@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
   m_Name: MetalCollision
   m_EditorClassIdentifier: 
-  volume: 0.5
+  volume: 0.4
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
   audioClips:
   - {fileID: 8300000, guid: bee2fea56bdfc8a469349f010a4db476, type: 3}
