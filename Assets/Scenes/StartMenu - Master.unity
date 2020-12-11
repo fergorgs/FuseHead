@@ -2167,7 +2167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Configura\xE7oes"
+  m_text: "Configura\xE7\xF5es"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8492802d39a9563be85bac0a4c0dfdb3, type: 2}
   m_sharedMaterial: {fileID: -653150919144936443, guid: 8492802d39a9563be85bac0a4c0dfdb3,
@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -4239,7 +4239,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -8394,7 +8394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Selection
+  m_text: "Sele\xE7\xE3o de Jogadores"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8492802d39a9563be85bac0a4c0dfdb3, type: 2}
   m_sharedMaterial: {fileID: -653150919144936443, guid: 8492802d39a9563be85bac0a4c0dfdb3,
@@ -8422,13 +8422,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -9400,7 +9400,17 @@ PrefabInstance:
     - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_text
-      value: Single Player Level Selection
+      value: "Sele\xE7\xE3o de Fases - \nUm Jogador"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909788454214226280, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -9411,6 +9421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825111700363075598, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -9520,7 +9535,7 @@ PrefabInstance:
     - target: {fileID: 6886361896114229701, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229720, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -9733,7 +9748,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -10105,7 +10120,17 @@ PrefabInstance:
     - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: m_text
-      value: Multiplayer Level Selection
+      value: "Sele\xE7\xE3o de Fases - \nM\xFAltiplos Jogador"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166199992392380763, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909788454214226280, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5041035474198417480, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -10136,6 +10161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825111700363075598, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6886361896114229700, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
@@ -10256,6 +10286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MPLevelSelectionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886361896114229720, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 256751ff580e14b4e97f9f824d14885d, type: 3}
@@ -10691,7 +10726,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

@@ -295,7 +295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Paused
+  m_text: Jogo Pausado
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88f6070ca6112934896db1b1ba343504, type: 2}
   m_sharedMaterial: {fileID: -653150919144936443, guid: 88f6070ca6112934896db1b1ba343504,
@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 533544176388105178, guid: a32b4a88323549349bf114753c8943be,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 533544176388105179, guid: a32b4a88323549349bf114753c8943be,
         type: 3}

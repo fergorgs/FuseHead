@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Selection
+  m_text: "Sele\xE7\xE3o de Fase"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8492802d39a9563be85bac0a4c0dfdb3, type: 2}
   m_sharedMaterial: {fileID: -653150919144936443, guid: 8492802d39a9563be85bac0a4c0dfdb3,
@@ -400,13 +400,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 52
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 37
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1142,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 533544176388105178, guid: a32b4a88323549349bf114753c8943be,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 533544176388105178, guid: a32b4a88323549349bf114753c8943be,
         type: 3}

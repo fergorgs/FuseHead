@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTimer: {fileID: 0}
   _timeText: {fileID: 2210964531160874718}
+  stringFormat: F1
 --- !u!114 &8740943647454425472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 533544176388105178, guid: a32b4a88323549349bf114753c8943be,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 533544176388105179, guid: a32b4a88323549349bf114753c8943be,
         type: 3}

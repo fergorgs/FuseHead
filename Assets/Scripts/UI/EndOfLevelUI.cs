@@ -36,7 +36,7 @@ public class EndOfLevelUI : MonoBehaviour
 
     public void OnVictory()
     {
-        _headerText.SetText("Victory");
+        _headerText.SetText("Vitoria");
         if (!sceneController.IsNextLevelAvailable())
         {
             DisableNextLevelButton();
@@ -51,7 +51,7 @@ public class EndOfLevelUI : MonoBehaviour
 
     public void OnGameOver()
     {
-        _headerText.SetText("Defeat");
+        _headerText.SetText("Derrota");
         DisableNextLevelButton();
         eventSystem.SetSelectedGameObject(_retryBtn.gameObject);
 
