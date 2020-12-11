@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7912612d64b3e764b83a11a289a5e72c, type: 3}
   m_Name: DefeatAudio
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.85
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
   audioClip: {fileID: 8300000, guid: f59d17f7675887e44aa6a552d2bd27d1, type: 3}
