@@ -2,7 +2,9 @@
 
 public class BlastResistence : MonoBehaviour
 {
-    [SerializeField] DestructableItem destructableItem = null;
+    [SerializeField] private DestructableItem destructableItem = null;
+    [SerializeField] private AudioEvent hitAudio = null;
+    [SerializeField] private AudioSource audioSource = null;
     [SerializeField] private ParticleSystem explodeEffects = null;
     [SerializeField] private ParticleSystem damageEffects = null;
     private float curLife;
@@ -28,6 +30,11 @@ public class BlastResistence : MonoBehaviour
                 explodeEffects.Play();
                 Destroy(explodeEffects.gameObject, 2f);
             }
+            if (audioSource != null && hitAudio != null)
+            {
+                audioSource.transform.parent = null;
+                Destroy(audioSource.gameObject, 1f);
+            }
             Destroy(gameObject);
             return;
         }
@@ -51,6 +58,8 @@ public class BlastResistence : MonoBehaviour
 		curLife -= points;
         if (damageEffects != null)
             damageEffects.Play();
+        if (audioSource != null && hitAudio != null)
+            hitAudio.Play(audioSource);
         VerifyDestructionAmount();
     }
 }
