@@ -81,6 +81,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "95ea7685-ee2c-4757-9924-82e1ddb4558f",
+                    "path": "<HID::Microntek              USB Joystick          >/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "AD",
                     "id": "88cd392f-91e5-42d1-b7dd-aa3af723a9a9",
                     "path": "1DAxis",
@@ -170,6 +181,61 @@
                 },
                 {
                     "name": "",
+                    "id": "99a66672-b3f1-422f-bb5c-075c6fb210ff",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "USBJArrows",
+                    "id": "44c693b4-1857-43fe-b837-9fa3af302471",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "15c3eced-9080-4e9e-8d7b-adb66686a6f3",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "a05b3943-7bb1-49be-9c1b-4041853e5910",
+                    "path": "<HID::Microntek              USB Joystick          >/hat/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b2f2a39d-e57d-4286-b904-46a500e97fee",
+                    "path": "<Joystick>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8fe2648c-a679-4390-ae5c-c71f25a15ab2",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -203,6 +269,28 @@
                 },
                 {
                     "name": "",
+                    "id": "0b207bed-2e1b-4001-bd83-a44c4974fbec",
+                    "path": "<HID::Microntek              USB Joystick          >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "BlowUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fad6ee1e-f039-44e3-9e66-adfab4ad8fd8",
+                    "path": "<HID::Microntek              USB Joystick          >/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
+                    "action": "BlowUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fc7d3a07-fa7d-44aa-9e1f-71c4883e13ae",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -219,6 +307,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9479594-74c7-4faa-b520-3193a714c7a4",
+                    "path": "<HID::Microntek              USB Joystick          >/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -263,6 +362,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a3cd1fe-833b-4cc7-9f83-ed7f38cf0299",
+                    "path": "<HID::Microntek              USB Joystick          >/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "USB Joystick",
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -326,6 +436,17 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b3811b0-f836-4b68-9061-f45876531f85",
+                    "path": "<HID::Microntek              USB Joystick          >/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -348,6 +469,17 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "USB Joystick",
+            "bindingGroup": "USB Joystick",
+            "devices": [
+                {
+                    "devicePath": "<HID::Microntek              USB Joystick          >",
                     "isOptional": false,
                     "isOR": false
                 }

@@ -68,6 +68,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Join
       m_Flags: 0
+    - m_Name: 
+      m_Id: fb5454fc-473f-4eba-86f9-9c5a0b491561
+      m_Path: <HID::Microntek              USB Joystick          >/button3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Join
+      m_Flags: 0
   leaveAction:
     m_Name: Leave
     m_Type: 0
@@ -84,8 +92,18 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Leave
       m_Flags: 0
+    - m_Name: 
+      m_Id: bf9bab6f-55bc-45a7-a635-57baf650be84
+      m_Path: <HID::Microntek              USB Joystick          >/button2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Leave
+      m_Flags: 0
   playerActionAsset: {fileID: -944628639613478452, guid: fbb358f3ea5185646a141b59544bca8e,
     type: 3}
+  joinBtn: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1001 &301133175470035265
 PrefabInstance:
   m_ObjectHideFlags: 0
