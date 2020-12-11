@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
 
     private void VerifyTime()
     {
-        if(TimeElapsed >= countdownTime)
+        if(TimeElapsed >= countdownTime && timeScale > float.Epsilon)
         {
             OnCountdownEnd?.Invoke();
             StopTimer();
