@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161a969a02ce8184195de657030fb933, type: 3}
   m_Name: Footsteps
   m_EditorClassIdentifier: 
-  volume: 0.15
+  volume: 0.3
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
   audioClip: {fileID: 8300000, guid: 9991582052e6acf41baf37ec2ac3a128, type: 3}
