@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7912612d64b3e764b83a11a289a5e72c, type: 3}
-  m_Name: VictoryAudio
+  m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
+  m_Name: VictoryAudios_pt2
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.5
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
-  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 150e0489bb327c44ca815d2db24f037a, type: 3}
+  - {fileID: 8300000, guid: 659eb9bd736c809448c3ba771ea7dc8b, type: 3}

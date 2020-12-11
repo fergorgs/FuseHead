@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705bda0cdb90e0e4395d95517a09b0b0, type: 3}
-  m_Name: TrampolimAudios
+  m_Script: {fileID: 11500000, guid: 7912612d64b3e764b83a11a289a5e72c, type: 3}
+  m_Name: VictoryAudio_pt1
   m_EditorClassIdentifier: 
-  volume: 0.5
+  volume: 0.6
   configs: {fileID: 11400000, guid: c3886f32cb01be940b2e4f2a320ca2a0, type: 2}
-  audioClips:
-  - {fileID: 8300000, guid: 0b2a1ee857cc0ae40ae96b761c5a990e, type: 3}
+  audioClip: {fileID: 8300000, guid: 076c31ff86f880c4c85b8c0f1d652614, type: 3}
