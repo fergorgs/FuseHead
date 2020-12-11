@@ -9440,7 +9440,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[2].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: d439e61426f738842b9ed69d86d31857, type: 3}
+      objectReference: {fileID: 2800000, guid: 3e514f45ae2e86e48b5af8261b4729fe, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[2].Name
@@ -9450,7 +9450,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[3].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: e6bc5379ad6a2124aab8213efd04c0ae, type: 3}
+      objectReference: {fileID: 2800000, guid: ef3d63d52d9aab04d980a54ae1848484, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[3].Name
@@ -9460,7 +9460,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[4].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: cff2074e06df54190876089e6dbf29d5, type: 3}
+      objectReference: {fileID: 2800000, guid: c3e228d1a875e47419b3dbe33b9c3252, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[4].Name
@@ -9470,7 +9470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[5].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 72937d52ea298a54eb51111ded34ed6d, type: 3}
+      objectReference: {fileID: 2800000, guid: 7e69464145a5aaa419e964bb9b62c726, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[5].Name
@@ -9480,12 +9480,22 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[6].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f98542aa9d61ca04386231f63b15fb3c, type: 3}
+      objectReference: {fileID: 2800000, guid: cae038c2cf7d2c6418389511592f06be, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[6].Name
       value: SP_07
       objectReference: {fileID: 0}
+    - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: levelTextureArray.Array.data[0].Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0c6d42131e6394a43a0a1c802a884b7d, type: 3}
+    - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: levelTextureArray.Array.data[1].Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 58443a662cf3fe74c83582e35baab582, type: 3}
     - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: currentScreen
@@ -10165,7 +10175,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[2].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 4a946fd6db4b8fe408ec485be48faec3, type: 3}
+      objectReference: {fileID: 2800000, guid: bb027bc4c88a5ba43b200de87c12ba94, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[2].Name
@@ -10175,12 +10185,22 @@ PrefabInstance:
         type: 3}
       propertyPath: levelTextureArray.Array.data[3].Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 5313370da7c506f48ac591e8de1d77a7, type: 3}
+      objectReference: {fileID: 2800000, guid: 8937c40e44596cc44899e5e896c5f38b, type: 3}
     - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: levelTextureArray.Array.data[3].Name
       value: MP_04
       objectReference: {fileID: 0}
+    - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: levelTextureArray.Array.data[0].Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: eb519841582b38e46a88e1e46906c59b, type: 3}
+    - target: {fileID: 1040630224097064889, guid: 256751ff580e14b4e97f9f824d14885d,
+        type: 3}
+      propertyPath: levelTextureArray.Array.data[1].Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 721709ed12718e34dbb784839f762e46, type: 3}
     - target: {fileID: 1652088017962505914, guid: 256751ff580e14b4e97f9f824d14885d,
         type: 3}
       propertyPath: currentScreen
