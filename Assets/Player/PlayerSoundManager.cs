@@ -90,8 +90,6 @@ public class PlayerSoundManager : MonoBehaviour
         {
             explosionAudio.Play(_postDestroyAudioSource);
         }
-        else
-            _postDestroyAudioSource.PlayOneShot(SoundDataBase.Instance.GetClip(SoundDataBase.PlayerSounds.Explosion));
     }
 
     private void LandingSound() => landingAudio?.Play(_postDestroyAudioSource);
