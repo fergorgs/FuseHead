@@ -5,7 +5,7 @@ public class TimerUI : MonoBehaviour
 {
     [SerializeField] private Timer gameTimer = null;
 
-    protected virtual void UpdateUI() { Debug.Log("UpdateUI of Base class"); }
+    protected virtual void UpdateUI() { }
 
     protected virtual void Update()
     {

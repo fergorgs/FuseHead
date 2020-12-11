@@ -44,7 +44,6 @@ public class FlagSystem : MonoBehaviour
         if (_remainingFlags <= 0)
         {
             OnVictoryEvent?.Raise();
-            Debug.Log("Game Won");
         }
     }
 

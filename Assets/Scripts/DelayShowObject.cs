@@ -16,8 +16,6 @@ public class DelayShowObject : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(time);
 
-        Debug.Log("Show Screen");
-
         obj.SetActive(true);
     }
 
