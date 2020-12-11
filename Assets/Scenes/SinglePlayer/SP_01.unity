@@ -7196,7 +7196,7 @@ PrefabInstance:
     - target: {fileID: 3586561675275292463, guid: 412c413a1d9ab944c9d9b7cf3d398e78,
         type: 3}
       propertyPath: orthographic size
-      value: 5.6695156
+      value: 5.625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412c413a1d9ab944c9d9b7cf3d398e78, type: 3}
@@ -7301,6 +7301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Components
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102453294910689283, guid: a639125bb5a81e2439458c98505a524e,
+        type: 3}
+      propertyPath: countdownTime
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a639125bb5a81e2439458c98505a524e, type: 3}
