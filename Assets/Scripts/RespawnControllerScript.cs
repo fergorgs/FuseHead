@@ -53,6 +53,11 @@ public class RespawnControllerScript : MonoBehaviour {
 
     public void SetupPlayer(PlayerInput player, int playerId)
     {
+        if(playerSpawnPoints[playerId] == null || playerSpawnPoints[playerId].Count == 0)
+        {
+            Destroy(player.gameObject);
+            return;
+        }
 		Vector3 respPos = playerSpawnPoints[playerId][0];
 		playerSpawnPoints[playerId].RemoveAt(0);
 		playerSpawnPoints[playerId].Add(respPos);
