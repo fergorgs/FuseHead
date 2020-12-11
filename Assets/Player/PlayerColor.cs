@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerColor : MonoBehaviour
 {
     [SerializeField] Color[] colors = new Color[4]; 
-    [SerializeField] private SpriteRenderer torsoSprite;
+    [SerializeField] private SpriteRenderer[] sprites;
 
 
     public void SetPlayerColor(int playerIndex){
         if(playerIndex < 0) return;
-        torsoSprite.color = colors[playerIndex];
+        foreach(var sprite in sprites){
+            sprite.color = colors[playerIndex];
+        }
     }
 
     
