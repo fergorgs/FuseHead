@@ -10,9 +10,9 @@ public class PlayerBlowUp : MonoBehaviour {
     public float blowUpTime, respawnTime;
     private SpriteRenderer sprite;
     private float startTime, t = 0;
+    private Coroutine blowUpCoroutine = null;
 
     void Start() {
-        StartCoroutine(BlowUpTimer());
         startTime = Time.time;
         sprite = puppetHead.GetComponent<SpriteRenderer>();
     }
@@ -28,14 +28,20 @@ public class PlayerBlowUp : MonoBehaviour {
         Instantiate(explosion, transform.position, transform.rotation);
 
         OnBlowUp?.Invoke();
+        StopCoroutine(blowUpCoroutine);
 
         // Destroy player on next frame
-        Destroy(gameObject, .01f);
+        // Destroy(gameObject, .01f);
     }
 
     private IEnumerator BlowUpTimer() {
         yield return new WaitForSeconds(blowUpTime);
 
         BlowUp();
+    }
+
+    public void StartBlowUpTimer() {
+        blowUpCoroutine = StartCoroutine(BlowUpTimer());
+        t = 0;
     }
 }

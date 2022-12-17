@@ -24,6 +24,8 @@ ScriptedImporter:
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -42,6 +44,10 @@ ScriptedImporter:
     textureType: 8
     textureShape: 1
     singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -75,7 +81,6 @@ ScriptedImporter:
       width: 0
       height: 0
     spriteID: 
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -85,6 +90,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: "Cabe\xE7ote"
@@ -99,7 +105,6 @@ ScriptedImporter:
       width: 334
       height: 406
     spriteID: d57fb7271f4f51d4faa6dab1ff776f92
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -108,7 +113,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 346, y: -516}
+    uvTransform: {x: 346, y: 4}
+    spritePosition: {x: 0, y: 520}
   - name: Corpo
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -121,7 +127,6 @@ ScriptedImporter:
       width: 334
       height: 708
     spriteID: b16f1f89f51b58b46aa540b2635e88d1
-    internalID: 0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -131,32 +136,47 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 0}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
   platformSettings: []
   mosaicLayers: 1
+  characterMode: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 1024
-  importedTextureHeight: 1024
-  documentSize: {x: 334, y: 926}
+  layerMappingOption: 2
+  generatePhysicsShape: 0
   paperDollMode: 0
   keepDupilcateSpriteName: 0
+  skeletonAssetReferenceID: 
   spriteCategoryList:
     categories: []
-  textureActualWidth: 1024
-  textureActualHeight: 1024
   spritePackingTag: 
   resliceFromLayer: 0
-  characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: Turret
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 00000000000000000000000000000000
+    spriteID: 1e64be25f949bd742997b777f7b76c53
     layerID: 5
     mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
   - name: "Cabe\xE7ote"
     spriteName: "Cabe\xE7ote"
     isGroup: 0
@@ -164,6 +184,9 @@ ScriptedImporter:
     spriteID: d57fb7271f4f51d4faa6dab1ff776f92
     layerID: 4
     mosaicPosition: {x: 346, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Corpo
     spriteName: Corpo
     isGroup: 0
@@ -171,13 +194,14 @@ ScriptedImporter:
     spriteID: b16f1f89f51b58b46aa540b2635e88d1
     layerID: 3
     mosaicPosition: {x: 4, y: 4}
-  characterData:
-    bones: []
-    parts: []
-    dimension: {x: 0, y: 0}
-    characterGroups: []
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
   generateGOHierarchy: 0
   textureAssetName: Turret Texture
   prefabAssetName: Turret Prefab
   spriteLibAssetName: Turret Sprite Lib
+  skeletonAssetName: 
   secondarySpriteTextures: []

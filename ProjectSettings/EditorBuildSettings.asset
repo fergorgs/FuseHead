@@ -5,43 +5,46 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TransitionScene.unity
     guid: 1b946e971c69d4a32b082226df745bbd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu - Master.unity
     guid: 361f3b13d5cb3764db74c905bd09bac0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_01.unity
     guid: 36528453d0ade514f8f8582cc164506e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_02.unity
     guid: d660c30ff4897a5f297348a5961f981f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_03.unity
     guid: 08d826941d224024cb939af5d593ac50
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_04.unity
     guid: 5ceec33dada6f294e979cc9e89485bd4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_05.unity
     guid: ec9d1cdbd08fe99919a88b61302cc6e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_06.unity
     guid: 6cf46ae00adfd8648ad9e6732aad1a5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SinglePlayer/SP_07.unity
     guid: 521022c3c4fee2a0e9c25081452ffdd5
-  - enabled: 1
-    path: Assets/Scenes/MultiPlayer/MP_01.unity
+  - enabled: 0
+    path: Assets/Scenes/Multiplayer/MP_01.unity
     guid: 304756ce45a0ae342b14f015f50a7909
-  - enabled: 1
-    path: Assets/Scenes/MultiPlayer/MP_02.unity
+  - enabled: 0
+    path: Assets/Scenes/Multiplayer/MP_02.unity
     guid: 86cb09d3ad297ef42a0904d37a8062f9
-  - enabled: 1
-    path: Assets/Scenes/MultiPlayer/MP_03.unity
+  - enabled: 0
+    path: Assets/Scenes/Multiplayer/MP_03.unity
     guid: a800f07c43621744587e632eb1a883c8
-  - enabled: 1
-    path: Assets/Scenes/MultiPlayer/MP_04.unity
+  - enabled: 0
+    path: Assets/Scenes/Multiplayer/MP_04.unity
     guid: 69bed19875f8e4740a8594e98604bef6
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/TEST_Online.unity
+    guid: 6cc14c0869d766f4a915eca7899c5f9c
   m_configObjects: {}
