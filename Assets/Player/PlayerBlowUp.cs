@@ -15,6 +15,7 @@ public class PlayerBlowUp : MonoBehaviour {
     void Start() {
         startTime = Time.time;
         sprite = puppetHead.GetComponent<SpriteRenderer>();
+        StartBlowUpTimer();
     }
 
     private void Update() {
