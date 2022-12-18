@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PlayerControlls : MonoBehaviour
+public class PlayerControlls : NetworkBehaviour
 {
     public PlayerInput playerInput;
     public float runSpeed = 40f, horizontalMove;

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RespawnControllerScript : MonoBehaviour {
+public class RespawnControllerScript : NetworkBehaviour
+{
 	public Vector3[] respawnPoints;
 	public GameObject playerPrefab;
 

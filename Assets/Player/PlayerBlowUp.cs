@@ -1,48 +1,54 @@
 using System;
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerBlowUp : MonoBehaviour {
-
+public class PlayerBlowUp : NetworkBehaviour
+{
     public event Action OnBlowUp;
 
     public GameObject explosion, puppetHead;
     public float blowUpTime, respawnTime;
     private SpriteRenderer sprite;
-    private float startTime, t = 0;
-    private Coroutine blowUpCoroutine = null;
+    private NetworkVariable<float> t = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    //private Coroutine blowUpCoroutine = null;
 
     void Start() {
-        startTime = Time.time;
         sprite = puppetHead.GetComponent<SpriteRenderer>();
-        StartBlowUpTimer();
+        ResetBlowUpTimer();
     }
 
     private void Update() {
-        sprite.color = Color.Lerp(Color.white, Color.red, t);
 
-        if (t < 1)
-            t += Time.deltaTime / blowUpTime;
+        //if (!IsOwner) { return; }
 
+        if (Input.GetButtonDown("Blow up") && IsOwner) { BlowUp(); }
+
+        sprite.color = Color.Lerp(Color.white, Color.red, t.Value);
+
+        if (t.Value < 1)
+            t.Value += Time.deltaTime / blowUpTime;
+        if (t.Value >= 1)
+            BlowUp();
     }
     public void BlowUp() {
         Instantiate(explosion, transform.position, transform.rotation);
 
         OnBlowUp?.Invoke();
-        StopCoroutine(blowUpCoroutine);
+        ResetBlowUpTimer();
+        //StopCoroutine(blowUpCoroutine);
 
         // Destroy player on next frame
         // Destroy(gameObject, .01f);
     }
 
-    private IEnumerator BlowUpTimer() {
-        yield return new WaitForSeconds(blowUpTime);
+    //private IEnumerator BlowUpTimer() {
+      //  yield return new WaitForSeconds(blowUpTime);
 
-        BlowUp();
-    }
+        //BlowUp();
+    //}
 
-    public void StartBlowUpTimer() {
-        blowUpCoroutine = StartCoroutine(BlowUpTimer());
-        t = 0;
+    public void ResetBlowUpTimer() {
+        t.Value = 0;
     }
 }

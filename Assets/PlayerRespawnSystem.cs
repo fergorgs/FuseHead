@@ -51,7 +51,7 @@ public class PlayerRespawnSystem : MonoBehaviour
 
         transform.position = respawnPoint;
         toggleVisible();
-        _playerBlowUp.StartBlowUpTimer();
+        _playerBlowUp.ResetBlowUpTimer();
         _puppetHead.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
