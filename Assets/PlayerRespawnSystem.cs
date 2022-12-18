@@ -28,9 +28,7 @@ public class PlayerRespawnSystem : MonoBehaviour
 
     private void toggleVisible()
     {
-        Debug.Log("Call toggleVisible()");
         isVisible = !isVisible;
-        Debug.Log("isVisible = " + isVisible);
         _rigidbody2d.simulated = isVisible;
         _playerPuppet.SetActive(isVisible);
         _walkParticles.SetActive(isVisible);
@@ -39,14 +37,12 @@ public class PlayerRespawnSystem : MonoBehaviour
 
     public void Respawn()
     {
-        Debug.Log("Call Respawn()");
         toggleVisible();
         StartCoroutine(RespawnTimer());
     }
 
     private IEnumerator RespawnTimer()
     {
-        Debug.Log("Call RespawnTimer()");
         yield return new WaitForSeconds(respawnTime);
 
         transform.position = respawnPoint;

@@ -16,4 +16,9 @@ public class NetworkManagerUIScript : MonoBehaviour
     {
         NetworkManager.Singleton.StartClient();
     }
+
+    public void StartServer()
+    {
+        NetworkManager.Singleton.StartServer();
+    }
 }
