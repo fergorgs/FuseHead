@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 1992721573551275315}
   - component: {fileID: -2249374671191585990}
   - component: {fileID: 3678403084230407397}
-  - component: {fileID: 3293891857117019539}
+  - component: {fileID: -1730316381551381284}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -4938,7 +4938,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -5145,7 +5145,7 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &3293891857117019539
+--- !u!114 &-1730316381551381284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5154,7 +5154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992721573551275308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80d7c879794dfda4687da0e400131852, type: 3}
+  m_Script: {fileID: 11500000, guid: 40d567981f822264e802260f3c56d917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3068098600696552322
