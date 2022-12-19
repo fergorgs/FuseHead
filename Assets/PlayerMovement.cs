@@ -19,7 +19,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Awake()
     {
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        if(m_Rigidbody2D == null) m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()

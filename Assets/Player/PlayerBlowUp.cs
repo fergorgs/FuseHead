@@ -15,8 +15,16 @@ public class PlayerBlowUp : NetworkBehaviour
     void Start() {
         sprite = puppetHead.GetComponent<SpriteRenderer>();
         ResetBlowUpTimer();
+    }
 
+    private void OnEnable()
+    {
         t.OnValueChanged += UpdateSpriteColor;
+    }
+
+    private void OnDisable()
+    {
+        t.OnValueChanged -= UpdateSpriteColor;
     }
 
     private void Update() {
@@ -25,15 +33,14 @@ public class PlayerBlowUp : NetworkBehaviour
 
         if (Input.GetButtonDown("Blow up")) { BlowUp(); }
 
-        //sprite.color = Color.Lerp(Color.white, Color.red, t.Value);
-
         if (t.Value < 1)
             t.Value += Time.deltaTime / blowUpTime;
         if (t.Value >= 1)
             BlowUp();
     }
     public void BlowUp() {
-        Instantiate(explosion, transform.position, transform.rotation);
+        SpawnExplosionServerRpc(transform.position, transform.rotation);
+        //Instantiate(explosion, transform.position, transform.rotation);
 
         OnBlowUp?.Invoke();
         ResetBlowUpTimer();
@@ -46,5 +53,12 @@ public class PlayerBlowUp : NetworkBehaviour
     private void UpdateSpriteColor(float previousT, float newT)
     {
         sprite.color = Color.Lerp(Color.white, Color.red, newT);
+    }
+
+    [ServerRpc]
+    private void SpawnExplosionServerRpc(Vector3 position, Quaternion rotation)
+    {
+        GameObject spawnedExplosion = Instantiate(explosion, transform.position, transform.rotation);
+        spawnedExplosion.GetComponent<NetworkObject>().Spawn(true);
     }
 }

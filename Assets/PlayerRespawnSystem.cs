@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerRespawnSystem : MonoBehaviour
+public class PlayerRespawnSystem : NetworkBehaviour
 {
     public Vector3 respawnPoint;
     public float respawnTime = 1;
@@ -12,7 +13,8 @@ public class PlayerRespawnSystem : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider2d = null;
     public GameObject _playerPuppet = null, _walkParticles = null, _puppetHead = null;
     private PlayerBlowUp _playerBlowUp = null;
-    private bool isVisible = true;
+    //private bool isVisible = true;
+    private NetworkVariable<bool> isVisible = new NetworkVariable<bool>(true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
 
     // Start is called before the first frame update
@@ -25,19 +27,27 @@ public class PlayerRespawnSystem : MonoBehaviour
             Respawn();
         };
     }
-
-    private void toggleVisible()
+    private void OnEnable()
     {
-        isVisible = !isVisible;
-        _rigidbody2d.simulated = isVisible;
-        _playerPuppet.SetActive(isVisible);
-        _walkParticles.SetActive(isVisible);
-        _capsuleCollider2d.enabled = isVisible;
+        isVisible.OnValueChanged += toggleVisible;
+    }
+
+    private void OnDisable()
+    {
+        isVisible.OnValueChanged -= toggleVisible;
+    }
+
+    private void toggleVisible(bool prevIsVisible, bool newIsVisible)
+    {
+        _rigidbody2d.simulated = newIsVisible;
+        _playerPuppet.SetActive(newIsVisible);
+        _walkParticles.SetActive(newIsVisible);
+        _capsuleCollider2d.enabled = newIsVisible;
     }
 
     public void Respawn()
     {
-        toggleVisible();
+        isVisible.Value = !isVisible.Value;
         StartCoroutine(RespawnTimer());
     }
 
@@ -46,7 +56,7 @@ public class PlayerRespawnSystem : MonoBehaviour
         yield return new WaitForSeconds(respawnTime);
 
         transform.position = respawnPoint;
-        toggleVisible();
+        isVisible.Value = !isVisible.Value;
         _playerBlowUp.ResetBlowUpTimer();
         _puppetHead.GetComponent<SpriteRenderer>().color = Color.white;
     }

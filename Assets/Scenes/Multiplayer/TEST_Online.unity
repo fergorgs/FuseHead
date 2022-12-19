@@ -442,6 +442,12 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 2427725527557881283, guid: 896328f7530bbc89eb6fa6b59937597e,
+        type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -8354,7 +8360,7 @@ PrefabInstance:
     - target: {fileID: 3586561675275292463, guid: 412c413a1d9ab944c9d9b7cf3d398e78,
         type: 3}
       propertyPath: orthographic size
-      value: 7.3196163
+      value: 7.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412c413a1d9ab944c9d9b7cf3d398e78, type: 3}
