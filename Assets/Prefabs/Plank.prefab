@@ -4898,8 +4898,8 @@ GameObject:
   - component: {fileID: -4383415454443626368}
   - component: {fileID: 1992721573551275315}
   - component: {fileID: -2249374671191585990}
-  - component: {fileID: 6302316169632354729}
-  - component: {fileID: 4777152832615759055}
+  - component: {fileID: 3678403084230407397}
+  - component: {fileID: 3293891857117019539}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -5119,7 +5119,7 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &6302316169632354729
+--- !u!114 &3678403084230407397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992721573551275308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 056f2e4cdc05bd94e802f0ef53f65e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
@@ -5144,8 +5144,8 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
   InLocalSpace: 0
-  Interpolate: 0
---- !u!114 &4777152832615759055
+  Interpolate: 1
+--- !u!114 &3293891857117019539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,7 +12,18 @@ public class BlastResistence : NetworkBehaviour
 
     private SpriteRenderer _spriteRenderer = null;
 
-    public override void OnNetworkSpawn() {
+    private void OnEnable()
+    {
+        curLife.OnValueChanged += VerifyDestructionAmount;
+    }
+
+    private void OnDisable()
+    {
+        curLife.OnValueChanged -= VerifyDestructionAmount;
+    }
+
+    public override void OnNetworkSpawn()
+    {
         curLife.Value = destructableItem.blastResistence;
     }
 
@@ -21,11 +32,11 @@ public class BlastResistence : NetworkBehaviour
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _spriteRenderer.sprite = destructableItem.fullLifeSprite;
-	}
+    }
 
-    private void VerifyDestructionAmount()
+    private void VerifyDestructionAmount(float prevLife, float newLife)
     {
-        if (curLife.Value <= 0)
+        if (newLife <= 0)
         {
             if (explodeEffects != null)
             {
@@ -38,31 +49,32 @@ public class BlastResistence : NetworkBehaviour
                 audioSource.transform.parent = null;
                 Destroy(audioSource.gameObject, 1f);
             }
-            Destroy(gameObject);
+            GetComponent<NetworkObject>().Despawn(true);
+            //Destroy(gameObject);
             return;
         }
 
-        if (curLife.Value > (destructableItem.blastResistence * 0.66f))
+        if (newLife > (destructableItem.blastResistence * 0.66f))
             _spriteRenderer.sprite = destructableItem.fullLifeSprite;
-        else if (curLife.Value > (destructableItem.blastResistence * 0.33f))
+        else if (newLife > (destructableItem.blastResistence * 0.33f))
             _spriteRenderer.sprite = destructableItem.middleLifeSprite;
         else
             _spriteRenderer.sprite = destructableItem.lowLifeSprite;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag == "Explosion")
-			Degrade(1);
-	}
+    {
+        if (collision.gameObject.tag == "Explosion")
+            Degrade(1);
+    }
 
-	public void Degrade(int points)
-	{
-		curLife.Value -= points;
+    public void Degrade(int points)
+    {
+        curLife.Value -= points;
         if (damageEffects != null)
             damageEffects.Play();
         if (audioSource != null && hitAudio != null)
             hitAudio.Play(audioSource);
-        VerifyDestructionAmount();
+        //VerifyDestructionAmount();
     }
 }
