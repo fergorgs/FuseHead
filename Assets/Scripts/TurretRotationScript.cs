@@ -31,12 +31,16 @@ public class TurretRotationScript : MonoBehaviour
 	void FixedUpdate() {
         Collider2D[] overlappedColliders = Physics2D.OverlapCircleAll(transform.position, range);
 
+		float dist = float.PositiveInfinity;
 		target = null;
 
         foreach(Collider2D collider2D in overlappedColliders) {
             if(collider2D.CompareTag("Player")) {
-                target = collider2D.transform;
-            	break;
+				float distToPlayer = Vector3.Distance(transform.position, collider2D.transform.position);
+				if(distToPlayer < dist) {
+					dist = distToPlayer;
+					target = collider2D.transform;
+                } 
             }
         }
 		

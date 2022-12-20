@@ -40,7 +40,6 @@ public class PlayerBlowUp : NetworkBehaviour
     }
     public void BlowUp() {
         SpawnExplosionServerRpc(transform.position, transform.rotation);
-        //Instantiate(explosion, transform.position, transform.rotation);
 
         OnBlowUp?.Invoke();
         ResetBlowUpTimer();
@@ -58,7 +57,7 @@ public class PlayerBlowUp : NetworkBehaviour
     [ServerRpc]
     private void SpawnExplosionServerRpc(Vector3 position, Quaternion rotation)
     {
-        GameObject spawnedExplosion = Instantiate(explosion, transform.position, transform.rotation);
+        GameObject spawnedExplosion = Instantiate(explosion, position, rotation);
         spawnedExplosion.GetComponent<NetworkObject>().Spawn(true);
     }
 }

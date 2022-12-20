@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Turret : MonoBehaviour {
+public class Turret : NetworkBehaviour {
 
     public GameObject bullet = null;
     public Transform bulletPoint = null;
@@ -12,7 +13,7 @@ public class Turret : MonoBehaviour {
     private AudioSource _audioSource = null;
 
     public float timeToShoot = 1f;
-    private float _elapsedTime = 0f;
+    private NetworkVariable<float> _elapsedTime = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     private void Awake()
     {
@@ -20,10 +21,20 @@ public class Turret : MonoBehaviour {
         _audioSource = GetComponent<AudioSource>();
     }
 
+    /*private void OnEnable()
+    {
+        _elapsedTime.OnValueChanged += UpdateSpriteColor;
+    }
+
+    private void OnDisable()
+    {
+        _elapsedTime.OnValueChanged -= UpdateSpriteColor;
+    }*/
+
     private void Fire()
     {
         if(_head.target)
-            Instantiate(bullet, bulletPoint.position, bulletPoint.rotation);
+            SpawnBulletServerRpc(bulletPoint.position, bulletPoint.rotation);
         fireAudio?.Play(_audioSource);
     }
 
@@ -32,15 +43,22 @@ public class Turret : MonoBehaviour {
     {
         if(!_head.target)
         {
-            _elapsedTime = 0;
+            _elapsedTime.Value = 0;
             return;
         }
-        if(_elapsedTime > timeToShoot)
+        if(_elapsedTime.Value > timeToShoot)
         {
             Fire();
-            _elapsedTime = 0f;
+            _elapsedTime.Value = 0f;
         }
-        _elapsedTime += Time.deltaTime;
+        _elapsedTime.Value += Time.deltaTime;
+    }
+
+    [ServerRpc]
+    private void SpawnBulletServerRpc(Vector3 position, Quaternion rotation)
+    {
+        GameObject spawnedBullet = Instantiate(bullet, position, rotation);
+        spawnedBullet.GetComponent<NetworkObject>().Spawn(true);
     }
 
 }
