@@ -7,7 +7,7 @@ public class Trampolim : MonoBehaviour
 
     [SerializeField] private Animator animator = null;
     [SerializeField] private AudioEvent activateAudio = null;
-    [SerializeField] private float force = 10;
+    //[SerializeField] private float force = 10;
 
     private AudioSource _audioSource = null;
 
@@ -24,9 +24,9 @@ public class Trampolim : MonoBehaviour
             animator.Play("Activated");
             activateAudio?.Play(_audioSource);
 
-            Rigidbody2D rigidbody = other.GetComponent<Rigidbody2D>();
+            /* Rigidbody2D rigidbody = other.GetComponent<Rigidbody2D>();
             Vector2 vel = (Vector2)transform.up * force - rigidbody.velocity;
-            rigidbody.velocity = Vector2.ClampMagnitude(vel, force * 1.5f);
+            rigidbody.velocity = Vector2.ClampMagnitude(vel, force * 1.5f);*/
         }
     }
 
