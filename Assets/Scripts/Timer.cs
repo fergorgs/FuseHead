@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.Events;
 
-public class Timer : MonoBehaviour
+public class Timer : NetworkBehaviour
 {
     public float CountdownTime { get => countdownTime; private set => countdownTime = value; }
-    public float TimeElapsed { get; private set; } = 0;
+    //public float TimeElapsed { get; private set; } = 0;
+    private NetworkVariable<float> TimeElapsed = new NetworkVariable<float>(0);
+    public float GetTimeElapsed() { return TimeElapsed.Value; }
 
     public bool BeginTimerAtStart = true;
     public UnityEvent OnCountdownEnd = null;
@@ -30,14 +33,15 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        TimeElapsed += Time.deltaTime * timeScale;
+        if( !IsHost ) { return; }
+        TimeElapsed.Value += Time.deltaTime * timeScale;
 
         VerifyTime();
     }
 
     private void VerifyTime()
     {
-        if(TimeElapsed >= countdownTime && timeScale > float.Epsilon)
+        if(TimeElapsed.Value >= countdownTime && timeScale > float.Epsilon)
         {
             OnCountdownEnd?.Invoke();
             StopTimer();
@@ -46,7 +50,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        TimeElapsed = 0;
+        TimeElapsed.Value = 0;
         if (timeScale == 0f)
             ContinueTimer();
     }

@@ -15,7 +15,7 @@ public class DisplayTimeText : MonoBehaviour
 
     private void OnEnable()
     {
-        timeText.SetText(timer.TimeElapsed.ToString("F1"));
+        timeText.SetText(timer.GetTimeElapsed().ToString("F1"));
     }
 
     private void OnDisable()

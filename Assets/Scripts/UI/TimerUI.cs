@@ -12,9 +12,9 @@ public class TimerUI : MonoBehaviour
         UpdateUI();
     }
 
-    protected float GetPassedTime() => gameTimer.TimeElapsed;
-    protected float GetRemainingTime() => (gameTimer.CountdownTime - gameTimer.TimeElapsed);
-    protected float GetNormalizedTime() => (gameTimer.TimeElapsed / gameTimer.CountdownTime);
+    protected float GetPassedTime() => gameTimer.GetTimeElapsed();
+    protected float GetRemainingTime() => (gameTimer.CountdownTime - gameTimer.GetTimeElapsed());
+    protected float GetNormalizedTime() => (gameTimer.GetTimeElapsed() / gameTimer.CountdownTime);
     protected float GetRemainingNormalizedTime() => (GetRemainingTime() / gameTimer.CountdownTime);
 
     protected virtual void SetReferences() => gameTimer = FindObjectOfType<Timer>();
