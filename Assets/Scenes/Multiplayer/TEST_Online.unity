@@ -386,10 +386,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 869573887150646168, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 381090983, guid: f8610a8b475657e40bada43f76ffb108, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2903877524094382180, guid: f8610a8b475657e40bada43f76ffb108,
         type: 3}
@@ -446,135 +445,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: respawnPoints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: respawnPoints.Array.data[0].x
-      value: -9.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: respawnPoints.Array.data[0].y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: respawnPoints.Array.data[1].x
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: respawnPoints.Array.data[1].y
-      value: -2.51
-      objectReference: {fileID: 0}
     - target: {fileID: 2903877524094382182, guid: f8610a8b475657e40bada43f76ffb108,
         type: 3}
       propertyPath: m_Name
       value: MultiplayerManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2903877524094382183, guid: f8610a8b475657e40bada43f76ffb108,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2903877524094382181, guid: f8610a8b475657e40bada43f76ffb108, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8610a8b475657e40bada43f76ffb108, type: 3}
---- !u!1 &381090981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2903877524094382182, guid: f8610a8b475657e40bada43f76ffb108,
-    type: 3}
-  m_PrefabInstance: {fileID: 381090980}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &381090982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381090981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ProtocolType: 0
-  m_MaxPacketQueueSize: 128
-  m_MaxPayloadSize: 6144
-  m_HeartbeatTimeoutMS: 500
-  m_ConnectTimeoutMS: 1000
-  m_MaxConnectAttempts: 60
-  m_DisconnectTimeoutMS: 30000
-  ConnectionData:
-    Address: 127.0.0.1
-    Port: 7777
-    ServerListenAddress: 
-  DebugSimulator:
-    PacketDelayMS: 0
-    PacketJitterMS: 0
-    PacketDropRate: 0
---- !u!114 &381090983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381090981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunInBackground: 1
-  LogLevel: 1
-  NetworkConfig:
-    ProtocolVersion: 0
-    NetworkTransport: {fileID: 381090982}
-    PlayerPrefab: {fileID: 1847340973223716054, guid: 45c377dfe3084914b98bb97c17c73e94,
-      type: 3}
-    NetworkPrefabs:
-    - Override: 0
-      Prefab: {fileID: 1992721573551275308, guid: 0ac6af64783b25c4681e90357cc6e3bc,
-        type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 2427725527557881283, guid: 896328f7530bbc89eb6fa6b59937597e,
-        type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 3853568320746234875, guid: 5c699b184f7f92540b95ee67062c6938,
-        type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    TickRate: 30
-    ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 0
-    ConnectionData: 
-    EnableTimeResync: 0
-    TimeResyncInterval: 30
-    EnsureNetworkVariableLengthSafety: 0
-    EnableSceneManagement: 1
-    ForceSamePrefabs: 1
-    RecycleNetworkIds: 1
-    NetworkIdRecycleDelay: 120
-    RpcHashSize: 0
-    LoadSceneTimeOut: 120
-    SpawnTimeout: 1
-    EnableNetworkLogs: 1
 --- !u!114 &456523320 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8192873130892457160, guid: a639125bb5a81e2439458c98505a524e,
@@ -8589,7 +8466,7 @@ PrefabInstance:
     - target: {fileID: 3586561675275292463, guid: 412c413a1d9ab944c9d9b7cf3d398e78,
         type: 3}
       propertyPath: orthographic size
-      value: 12.344021
+      value: 8.011811
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412c413a1d9ab944c9d9b7cf3d398e78, type: 3}

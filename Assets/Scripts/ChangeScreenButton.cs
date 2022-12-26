@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class ChangeScreenButton : MonoBehaviour
 {
     [SerializeField] private GameObject currentScreen = default;
-    [SerializeField] private GameObject nextScreen = default;
-    [SerializeField] private GameObject nextScreenSelectedObject = default;
+    [SerializeField] public GameObject nextScreen = default;
+    [SerializeField] public GameObject nextScreenSelectedObject = default;
     [SerializeField] private EventSystem eventSystem = default;
     [SerializeField] private bool AutoAddListener = true;
 
